@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mes Animaux</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> -->
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+  </head>
+
+  <!-- <body> -->
+
+    <% if current_page?(root_path) && @theme.background_color.present? %>
+      <body style="background-color: <%= @theme.background_color %>">
+    <% else %>
+      <body style="background-color: white">
+    <% end %>
+
+
+
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
+
+        <% if current_page?(root_path) || current_page?(favoris_path) || current_page?(themes_path) %>
+      <!-- <div class="my-container-100"> -->
+        <!-- initialement j'avais mis 65 -->
+
+        <%= yield %>
+      <!-- </div> -->
+
+    <% else %>
+      <div class="my-form-dynamic-container">
+        <%= yield %>
+      </div>
+
+    <% end %>
+
+<br>
+    <%= render 'shared/footer' %>
+
+
+
+  </body>
+</html>

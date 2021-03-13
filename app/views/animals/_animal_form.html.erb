@@ -1,0 +1,270 @@
+<div class="form-body">
+
+  <%= simple_form_for(animal) do |f| %>
+
+
+
+<% if animal.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% animal.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+
+      <%= f.input :espece,
+
+                   collection: Animal::ESPECE,
+                   # required: true,
+                   autofocus: true,
+                   #include_blank: false, # ca enleve le premier choix de la liste vide
+                   # selected: 'Européen',
+                   # label_method: :first,
+                   # value_method: :second,
+                   label:'Espèce' %>
+
+
+
+
+      <%= f.input :race,
+                   # collection: (f.object.race.present? ? animal.set_race(f.object.espece) : Animal::NO_ESPECE),
+                   collection: (animal.new_record? ? Animal::NO_ESPECE : set_race(f.object.espece) ),
+                   # collection: Animal::NO_ESPECE,
+                   label:'Race' %>
+
+<!--                    # collection: Animal::CAT_RACE,
+                   # required: true,
+
+                   #include_blank: false, # ca enleve le premier choix de la liste vide
+                   # selected: (f.object.espece.present? ? : Animal::NO_ESPECE.first),
+ -->
+
+
+      <%= f.input :name,
+                   # required: true,
+                   label:'Nom',
+                   placeholder: "Molly",
+                   error: "Nom de l'animal obligatoire",
+                   hint: "Entrer le nom de l'animal" %>
+
+      <%= f.input :description,
+                   as: :text,
+                   # required: true,
+                   label:'Description',
+                   placeholder: "Caline et joueuse, j'adore les croquettes. Je suis vaccinée, déparasitée et identifiée.",
+                   error: "Description doit être remplie",
+                   hint: "Entrez une description générale sur le caractère de l'animal, s'il est vacciné, etc..." %>
+
+
+      <%= f.input :birth_date,
+                   # as: :string, input_html: { class: 'form-datepicker'},
+                   start_year: Date.today.year - 20,
+                   end_year: Date.today.year,
+                   selected: Date.today,
+                   selected: (animal.new_record? ? Date.today : f.object.birth_date),
+                   # required: true,
+                   required: false,
+                   label:'Date de naissance',
+                   hint: "Entrez une date de naissance, même approximative, l'age de l'animal sera actualisé automatiquement." %>
+
+      <%= f.input :sex,
+                   collection: Animal::SEX,
+                   # selected: Animal::SEX.first,
+                   selected: (f.object.sex.present? ? Animal::SEX.first : f.object.sex),
+                   # required: true,
+                   label:'Sexe' %>
+
+      <%= f.input :sterilized,
+                   as: :radio_buttons,
+                   required: false,
+                   # checked: (f.object.sterilized.present? ? f.object.sterilized : false),
+                   # checked: false,
+                   label: 'Stérilisé' %>
+
+
+      <%= f.input :hair,
+                   collection: Animal::HAIR,
+                   # selected: 'Court',
+                   selected: (f.object.hair.present? ? f.object.hair : 'Court'),
+                   required: false,
+                   label:'Poil (ou pelage) :' %>
+
+      <%= f.input :color,
+                   collection: Animal::COLOR,
+                   label:'Couleur (ou robe)',
+                   error: "Couleur de l'animal obligatoire",
+                   include_blank: false,
+                   required: false,
+                   # placeholder: "exemple : Grise",
+                   hint: "Choisissez la couleur de l'animal" %>
+
+      <%= f.input :size,
+                   collection: Animal::SIZE,
+                   # selected: 'Moyen',
+                   selected: (f.object.size.present? ? f.object.size : 'Moyen'),
+                   required: false,
+                   label:'Taille' %>
+
+      <%= f.input :is_available,
+                   as: :radio_buttons,
+                   required: false,
+                   # collection: Animal::YES_NO,
+                   # label_method: :second,
+                   # value_method: :first,
+                   # wrapper: :horizontal_collection_inline,
+                   # checked: true,
+                   # checked: (f.object.is_available.present? ? f.object.is_available : true),
+                   # input_html: { value: true },
+                   label: "Disponible à l'adoption",
+                   hint: "Animal encore trop jeune, pas encore sevré etc..." %>
+
+
+
+      <%= f.input :photos,
+                   as: :file,
+                   # required: true,
+                   input_html: { multiple: true, accept: "image/*" },
+                   hint: "Mettez plusieurs photos de bonnes qualités pour donner envie à vos adoptants." %>
+
+
+                  <div id="new_photos" class="hidden">
+                      <p id="txt_new_photo"></p>
+                      <div id="picturesOutput" class="row ml-1">
+                         <!-- <div id="pictureOutput"></div> -->
+                      </div>
+                  </div>
+                  <% if !animal.new_record? %>
+                     <% if animal.photos.attached? %>
+                        <% if animal.photos.count > 1 %>
+                          <p>Photos actuelles de cet animal :</p>
+                        <% else %>
+                          <p>Unique photo de cet animal :</p>
+                        <% end %>
+
+                        <div class="row ml-1" id="current_photos">
+                          <% animal.photos.each do |photo, i| %>
+                             <%# link_to "Ajouter un animal", new_animal_path, url: new_animal_path, method: :get, class: "dropdown-item" %>
+
+                                <%= link_to add_photo_to_delete_path(id: animal, photo: photo),
+                                    method: :get,
+                                    data: { confirm: "Voulez-vous supprimer cette photo ?", title: "Suppression de la photo", commit: "Oui", cancel: "Annuler" },
+                                    remote: true,
+                                    id: "delete_photo" do %>
+                                        <p id="icon_deleted"><i class="fas fa-trash"></i></p>
+
+                                      <div style="background-image: linear-gradient(rgba(0,0,0,0),rgba(255,255,255,0)),url(<%= cl_image_path photo.key,  width: 120, height: 120, crop: :fill %>)" alt="photo" id="div_photo">
+
+                                        <!-- <p id="icon_deleted"><i class="fas fa-trash"></i></p> -->
+
+
+                                      </div>
+                                    <% end  %>
+
+
+
+
+
+
+
+                          <% end %>
+
+                        </div>
+
+
+                      <% else %>
+                        <p>Il n'y a actuellement pas de photo</p>
+                     <% end %>
+
+                   <% end %>
+
+
+
+</div>
+
+<div class="form-header-slim">
+  <h2>Critères de compatibilité</h2>
+</div>
+
+<div class="form-body">
+
+    <%= f.input :cat_compatible,
+                 as: :radio_buttons,
+                 wrapper: :horizontal_collection_inline,
+                 # checked: true,
+                 # checked: (f.object.cat_compatible.present? ? f.object.cat_compatible : true ),
+                 label: "Compatible Chats" %>
+
+    <%= f.input :dog_compatible,
+                 as: :radio_buttons,
+                 wrapper: :horizontal_collection_inline,
+                 # checked: (f.object.dog_compatible.present? ? f.object.dog_compatible : true),
+                 # checked: true,
+                 label: "Compatible Chiens" %>
+
+
+
+
+    <%= f.input :child_compatible,
+                 as: :radio_buttons,
+                 wrapper: :horizontal_collection_inline,
+                 # checked: (f.object.child_compatible.present? ? f.object.child_compatible : true),
+                 # checked: true,
+                 label: "Compatible Enfants" %>
+
+
+    <%= f.input :handicap,
+                 as: :radio_buttons,
+                 # checked: false,
+                 # checked: (f.object.handicap.present? ? f.object.handicap : false),
+                 label: "Possède un handicap",
+                 hint: "Cet animal a un handicap comme un oeil en moins ou une patte en moins... :(" %>
+
+</div>
+
+<div class="form-header-slim">
+  <h2>Informations sur le contact</h2>
+</div>
+
+<div class="form-body">
+
+
+    <%= f.input :contact,
+                 label: "Email ou téléphone du contact",
+                 # required: true,
+                 # placeholder: "Chez #{current_user.first_name} au #{current_user.phone} ou par email #{current_user.email}",
+                 input_html: { value: current_user.email },
+                 error: "Contact doit être rempli",
+                 hint: "Information sur la personne à contacter pour demander des renseignements sur cet animal" %>
+
+
+    <%= f.input :host_name,
+                 # required: true,
+                 label: "Adresse de visite actuelle",
+                 placeholder: "Chez Peggy à Lyon",
+                 error: "Adresse de visite doit être remplie",
+                 # blank_label: "caca",
+                 hint: "Information sur situation géographique pour pouvoir visiter cet animal" %>
+
+
+
+    <!-- parametres cachés -->
+
+
+      <%= f.input :added_date,
+                   as: :hidden,
+                   input_html: { value: Date.today } %>
+
+    <%= f.input :added_by,
+                 as: :hidden,
+                 input_html: { value: "#{current_user.first_name} #{current_user.last_name.chr.capitalize}"  } %>
+
+
+    <!-- bouton  -->
+    <%= f.button :submit, animal.new_record? ? "Créer l'animal" : "Modifier l'animal", class: "btn btn-success" %>
+    <%= link_to 'Annuler', root_path, class: "btn btn-outline-secondary" %>
+  <% end %>
+</div>
+

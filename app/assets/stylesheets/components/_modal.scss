@@ -1,0 +1,75 @@
+// Customer la gem "data-confirm-modal"
+
+.modal.fade {
+    transition: opacity 0.20s linear; //0.15
+
+
+  }
+
+
+.modal-backdrop.show {
+    opacity: 0.5;
+}
+  .modal-content {
+    font-family: 'Baloo Chettan 2', cursive;
+    border-radius: .6rem; //1rem;
+    padding: 8px 12px;
+    // font-size: 14px; // compatibilie IE
+    // font-size: 1.4rem;
+
+    .modal-header {
+      .modal-title {
+        font-family: 'Baloo Chettan 2', cursive;
+        font-size: 1.8rem;
+        // text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        font-weight: 500;
+      }
+      .close {
+          font-size: 2.5rem;
+      }
+    }
+
+
+    .modal-body {
+
+      p{
+        margin-bottom: 4px;
+      }
+    }
+
+
+    .modal-footer {
+
+      .btn-danger {
+        padding-left: 3rem;
+        padding-right: 3rem;
+
+        // color: #fff;
+        // background-color: #007bff;
+        // border-color: #007bff;
+
+        // &:hover {
+        //   color: #fff;
+        //   background-color: #0069d9;
+        //   border-color: #0062cc;
+        // }
+
+        // &:focus, &.focus {
+        //   color: #fff;
+        //   background-color: #0069d9;
+        //   border-color: #0062cc;
+        //   box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+        // }
+      }
+
+
+      .btn-default {
+
+        // margin-right: 2rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+
+      }
+    }
+  }
+

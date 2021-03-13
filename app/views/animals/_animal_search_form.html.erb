@@ -1,0 +1,206 @@
+<div class="my-search-form">
+ <!-- id="id-search-form"> -->
+  <div class="form-header-slim">
+    <h2>Rechercher votre animal</h2>
+  </div>
+
+  <div class="form-body">
+
+    <div class="check">
+      <%= simple_form_for :search,
+                url: root_path,
+                wrapper: :horizontal_form,
+                wrapper_mappings: {
+                  boolean:       :horizontal_boolean,
+                  check_boxes:   :horizontal_collection_inline,
+                  date:          :horizontal_multi_select,
+                  datetime:      :horizontal_multi_select,
+                  file:          :horizontal_file,
+                  radio_buttons: :horizontal_collection_inline,
+                  range:         :horizontal_range,
+                  time:          :horizontal_multi_select
+                },
+                id: "search_bar",
+                method: :get do |f| %>
+
+        <%= f.input :espece,
+                       collection: Animal::ESPECE,
+                       include_blank: false,
+                       prompt: :espece,
+
+                       # selected: false,
+                       # autofocus: true,
+                       # include_blank: false,
+                       # prompt: "Veuillez selectionner le sexe",
+                       label: "Espèce",
+                       # as: :radio_buttons,
+                       # as: :check_boxes,
+                       # selected: (params[:search].present? ? (params[:search][:sex].present? ? params[:search][:sex] : false) : false),
+                       # selected: Animal::SEX.first,
+                       # selected: Animal::SEX,
+                       # label:'Sexe'
+                       required: false %>
+
+
+        <%= f.input :sex,
+                       collection: Animal::SEX,
+                       # selected: false,
+                       # autofocus: true,
+                       # include_blank: false,
+                       # prompt: "Veuillez selectionner le sexe",
+                       label: "Sexe",
+                       # as: :radio_buttons,
+                       as: :radio_buttons,
+                       # selected: (params[:search].present? ? (params[:search][:sex].present? ? params[:search][:sex] : false) : false),
+                       # selected: Animal::SEX.first,
+                       # selected: Animal::SEX,
+                       # label:'Sexe'
+                       required: false %>
+
+
+        <%= f.input :birth_date,
+                       collection: Animal::AGE,
+                       # selected: false,
+                       # autofocus: true,
+                       # include_blank: false,
+                       # prompt: "Veuillez selectionner le sexe",
+                       label: "Age",
+                       # label_method: :second,
+                       # value_method: :first,
+                       # as: :radio_buttons,
+                       as: :radio_buttons,
+                       # selected: (params[:search].present? ? (params[:search][:sex].present? ? params[:search][:sex] : false) : false),
+                       # selected: Animal::SEX.first,
+                       # selected: Animal::SEX,
+                       # label:'Sexe'
+                       required: false %>
+
+        <%= f.input :size,
+                       collection: Animal::SIZE,
+                       # selected: false,
+                       # autofocus: true,
+                       # include_blank: false,
+                       # prompt: "Veuillez selectionner le sexe",
+                       label: "Taille",
+                       # as: :radio_buttons,
+                       as: :radio_buttons,
+                       # selected: (params[:search].present? ? (params[:search][:sex].present? ? params[:search][:sex] : false) : false),
+                       # selected: Animal::SEX.first,
+                       # selected: Animal::SEX,
+                       # label:'Sexe'
+                       required: false %>
+
+        <%= f.input :sterilized,
+                       collection: Animal::YES_NO,
+                       # selected: false,
+                       # include_blank: false,
+                       # prompt: :sterilized,
+                       label: "Stérilisé",
+                       required: false,
+                       # value_method: :first,
+                       # as: :radio_buttons,
+                       as: :radio_buttons,
+                       # checked: (f.object.sterilized.present? ? f.object.sterilized : false),
+                       # checked: false,
+                       # label: 'Stérilisé'
+                       label_method: :second %>
+
+
+        <%= f.input :handicap,
+                       as: :radio_buttons,
+                       wrapper: :horizontal_collection_inline,
+                       # checked: false,
+                       # checked: (f.object.handicap.present? ? f.object.handicap : false),
+                       label: "Handicapé",
+                       required: false %>
+
+
+
+      <p>Critères de compatibilité avec les :</p>
+
+
+        <%= f.input :cat_compatible,
+                       as: :radio_buttons,
+                       wrapper: :horizontal_collection_inline,
+                       required: false,
+                       label: "Chats" %>
+
+        <%= f.input :dog_compatible,
+                       as: :radio_buttons,
+                       wrapper: :horizontal_collection_inline,
+                       required: false,
+                       label: "Chiens" %>
+
+
+
+        <%= f.input :child_compatible,
+                       as: :radio_buttons,
+                       wrapper: :horizontal_collection_inline,
+                       required: false,
+                       # checked: (f.object.child_compatible.present? ? f.object.child_compatible : true),
+                       # checked: true,
+                       label: "Enfants" %>
+
+
+
+
+
+
+    </div>
+
+    <div class="collection">
+
+          <div class="collection-1">
+
+
+          <p>Recherche avancée</p>
+
+            <%= f.input :race,
+                     collection: [""],
+                     include_blank: false,
+                     prompt: :race,
+                     required: false,
+                     label:'Race' %>
+
+            <%= f.input :color,
+                     collection: Animal::COLOR,
+                     label:'Couleur',
+                     include_blank: false,
+                     required: false,
+                     prompt: :color %>
+
+            <%= f.input :hair,
+                     collection: Animal::HAIR,
+                     include_blank: false,
+                     prompt: :hair,
+                     required: false,
+                     label:'Poil' %>
+          </div>
+
+         <div class="bottom">
+            <br>
+            <!-- bouton  -->
+
+            <%= f.button :submit, "Rechercher", url: root_path, method: :get, class: "btn btn-success", id: "click-search-form", remote: true %>
+
+            <!-- <i class="fas fa-search">Rechercher</i> -->
+
+
+            <!-- <%# link_to 'Effacer la selection', root_path(anchor: 'id-search-form') , class: "btn btn-outline-secondary" %> -->
+            <%= link_to 'Effacer la selection', root_path, class: "btn btn-outline-secondary" %>
+
+<!--             <%# link_to root_path, class: "btn btn-outline-secondary" do %>
+                      Effacer la selection
+            <%# end %> -->
+            <br>
+            </div>
+
+    </div>
+  </div>
+
+
+
+  <% end %>
+
+
+</div>

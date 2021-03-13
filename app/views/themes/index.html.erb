@@ -1,0 +1,110 @@
+<div class="my-general-dynamic-container">
+
+  <br>
+  <h3 id="h3-home">Gestionnaire de thèmes</h3>
+  <br>
+
+  <%= link_to new_theme_path,
+         class: "btn btn-primary",
+         url: new_theme_path,
+         method: :get do %>
+    <%= icon('fas', 'plus-circle')  %>&nbsp; Ajouter un thème
+
+  <% end %>
+
+  <br>
+  <br>
+
+  <div class="my-table-responsive">
+
+
+    <table class="my-table my-table-hover my-table-striped">
+      <thead class="my-thead-dark">
+      <tr>
+        <!-- <th scope="col">N°</th> -->
+        <th scope="col">Nom</th>
+        <!-- <th scope="col">Description</th> -->
+        <th scope="col">Logo</th>
+        <th scope="col">Avatar</th>
+        <th scope="col">Couleur de fond</th>
+        <th scope="col">Editer</th>
+        <th scope="col">Supprimer</th>
+        <th scope="col">Appliquer</th>
+      </tr>
+      </thead>
+      <tbody>
+        <% @themes.each_with_index do |t, index| %>
+          <tr>
+            <!-- <td><%= index + 1 %></td> -->
+            <td id="name"><%= t.name %></td>
+            <!-- <td><%= t.basic_description%></td> -->
+            <% if t.logo.attached? %>
+              <td><img src="<%= cl_image_path t.logo.key %>" alt="logo" id="logo"></td>
+            <% else %>
+              <td>aucune image</td>
+            <% end %>
+
+            <% if t.avatar.attached? %>
+              <td><img src="<%= cl_image_path t.avatar.key %>" alt="avatar" id="avatar"></td>
+            <% else %>
+              <td>aucun avatar</td>
+            <% end %>
+
+            <td style="background-color: <%=t.background_color%>" id="back-color">Exemple de texte</td>
+            <td id="icone">
+
+                <%= link_to edit_theme_path(t),
+                     class: "icones edit",
+                     url: edit_theme_path(t),
+                     method: :get do %>
+                  <i class="fas fa-edit"></i>
+                <% end %>
+            </td>
+            <td id="icone">
+                <% unless t.id == @config.theme_id %>
+                    <%= link_to theme_path(t),
+                             method: :DELETE,
+                             data: { confirm: "Voulez-vous supprimer le thème #{t.name} ?", title: "Suppression du thème", commit: "Oui", cancel: "Annuler" },
+                             class: "icones suppr" do %>
+                      <i class="fas fa-trash"></i>
+                    <% end %>
+                <% end %>
+            </td>
+            <td class="appliquer">
+
+                <% if t.id == @config.theme_id %>
+                  <%= link_to themes_path,
+                           class: "btn btn-secondary disabled" do %>
+                           <!-- &nbsp; &nbsp; &nbsp; Thème actuel &nbsp; &nbsp; -->
+                           Thème actuel
+                  <% end %>
+                <% else %>
+                  <%= link_to theme_configs_path(theme_id: t.id),
+
+
+                           method: :patch,
+                           # data: { confirm: "Voulez-vous appliquer le thème ?" },
+                           class: "btn btn-primary" do %>
+                           Appliquer le thème
+                  <% end %>
+                <% end %>
+
+
+
+            </td>
+          </tr>
+
+
+
+          <% end %>
+
+      </tbody>
+  </table>
+
+
+  </div>
+
+  <br>
+  <%= link_to 'Retour', root_path, class: "btn btn-outline-secondary" %>
+
+  </div>

@@ -1,0 +1,183 @@
+
+<div class="form-body">
+
+  <%= simple_form_for(theme) do |f| %>
+
+      <%= f.error_notification %>
+
+      <%= f.input :name,
+                   # required: true,
+                   label:'Nom',
+                   placeholder: "Les Cats Trop Mignons",
+                   autofocus: true,
+                   hint: "Entrer le nom de votre association" %>
+
+      <%= f.input :basic_description,
+                   # as: :text,
+                   # required: true,
+                   label:'Description simple',
+                   placeholder: "Trouvez votre chat chez LCTM !",
+                   hint: "Description courte et en une seule ligne de votre association" %>
+
+      <%= f.input :full_description,
+                   as: :text,
+                   # required: true,
+                   label:'Description détaillée',
+                   placeholder: "Nous avons toute sortes de chats, pour le moment placés en familles d'accueil, qui n'attendent que vous...",
+                   hint: "Entrer une description détaillée de votre association" %>
+
+      <%= f.input :email,
+                 label: "Email de contact",
+                 as: :email,
+                 # required: true,
+                 hint: false %>
+
+      <%= f.input :phone,
+                 label: "Numéro de téléphone de contact",
+                 as: :tel %>
+
+      <%= f.input :address,
+                 label: "Adresse de votre association",
+                 # required: true,
+                 placeholder: "15 rue des Jasmins, 69008 Lyon" %>
+
+
+      <%= f.input :legal_mention,
+                 label: "Mention légale",
+                 # required: true,
+                 placeholder: "Association Loi 1901 etc...",
+                 hint: "Laissez ce champ vide, il ne sera pas affiché." %>
+
+      <%= f.input :siret_number,
+                 label: "SIRET",
+                 # required: true,
+                 hint: "Laissez ce champ vide, il ne sera pas affiché." %>
+
+      <%= f.input :twitter_url,
+                 label: "Adresse de votre page Twitter",
+                 placeholder: "https://twitter.com/mon_association",
+                 # required: true,
+                 hint: "Laissez ce champ vide, il ne sera pas affiché." %>
+
+      <%= f.input :facebook_url,
+                 label: "Adresse de votre page Facebook",
+                 placeholder: "https://www.facebook.com/mon_association",
+                 hint: "Laissez ce champ vide, il ne sera pas affiché." %>
+
+      <%= f.input :instagram_url,
+                 label: "Adresse de votre page Instagram",
+                 placeholder: "https://www.instagram.com/mon_association",
+                 hint: "Laissez ce champ vide, il ne sera pas affiché." %>
+
+      <%= f.input :background_color,
+                   as: :color,
+                   label: "Couleur de fond du site",
+                   # required: true,
+                   # placeholder: "Blanc par défaut",
+                   input_html: { class: 'color-selector', value: (f.object.background_color.present?) ? f.object.background_color : '#FFFFFF' },
+                   hint: "Attention à ne pas choisir une couleur de fond trop sombre, vous ne verrez plus le texte !" %>
+</div>
+
+
+<div class="form-header">
+  <h2>Formulaire d'inscription</h2>
+</div>
+
+<div class="form-body">
+      <%= f.input :pdf,
+                   as: :file,
+                   label: "Formulaire d'inscription",
+                   required: true,
+                   input_html: { multiple: false, accept: "application/pdf" },
+                   hint: "Mettez un fichier pdf ou autre" %>
+
+
+                   <% if !theme.new_record? %>
+                     <% if theme.pdf? %>
+                        <p>Ceci est le formulaire actuel : <%= link_to theme.pdf_identifier, theme.pdf.url %> </p>
+
+
+                         <!--  <%#= link_to add_pdf_to_delete_path(id: theme),
+                                    method: :get,
+                                    data: { confirm: "Voulez-vous supprimer ce formulaire ?", title: "Suppression du formulaire", commit: "Oui", cancel: "Annuler" },
+                                    remote: true do %>
+
+                                        <p id="icon_deleted"><i class="fas fa-trash"></i></p>
+
+
+                          <%# end  %> -->
+
+
+
+                          <iframe class="pdf_preview" src="<%= theme.pdf %>"></iframe>
+                          <p><%= f.check_box :remove_pdf %> Cocher pour supprimer le formulaire actuel</p>
+
+
+
+                      <% else %>
+                        <p>Il n'y a actuellement pas de formulaire</p>
+
+
+                     <% end %>
+
+                 <% end %>
+</div>
+
+
+<div class="form-header">
+  <h2>Logo du site</h2>
+</div>
+
+<div class="form-body">
+
+      <%= f.input :logo,
+                   as: :file,
+                   required: true,
+                   input_html: { multiple: false, accept: "image/*" },
+                   hint: "Mettez une photo/logo de fond pour votre association" %>
+
+
+                   <% if !theme.new_record? %>
+                     <% if theme.logo.attached? %>
+                        <p>Ceci est le logo actuel</p>
+                        <img src="<%= cl_image_path theme.logo.key,  width: 225, crop: :fill %>" alt="logo" id="logo">
+
+                      <% else %>
+                        <p>Il n'y a actuellement pas de logo</p>
+                     <% end %>
+
+                   <% end %>
+</div>
+
+
+<div class="form-header">
+  <h2>Avatar</h2>
+</div>
+
+<div class="form-body">
+      <%= f.input :avatar,
+                   as: :file,
+                   required: true,
+                   input_html: { multiple: false, accept: "image/*" },
+                   hint: "Mettez un avatar pour votre site, sinon celui par defaut sera utilisé" %>
+
+                  <% if !theme.new_record? %>
+                     <% if theme.avatar.attached? %>
+                        <p>Ceci est l'avatar actuel</p>
+                        <img src="<%= cl_image_path theme.avatar.key,  width: 55, crop: :fill %>" alt="avatar" id="avatar">
+
+                     <% else %>
+                        <p>Il n'y a actuellement pas d'avatar/p>
+                     <% end %>
+                  <% end %>
+<br>
+<br>
+
+
+
+    <!-- bouton  -->
+    <%= f.button :submit, theme.new_record? ? 'Créer le thème' : 'Modifier le thème', class: "btn btn-success" %>
+    <%= link_to 'Annuler', themes_path, class: "btn btn-outline-secondary" %>
+  <% end %>
+</div>
+

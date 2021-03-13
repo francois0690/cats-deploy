@@ -1,0 +1,171 @@
+.my-search-form {
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  margin: 0 auto;
+  max-width: 100%;
+
+  margin-top: 2.4rem; //24px;
+  margin-bottom: 2.4rem; //24px;
+
+  border: 1px solid rgba(0,0,0,0.125);
+  border-radius: 0.25rem;
+
+  border-color: #00617f;
+  // rgb(16, 97, 126)
+
+  a {
+    // font-family: 'Baloo Chettan 2', cursive;
+    // font-size: 16px;
+    font-size: 1.4rem; //14px;
+    }
+
+  .form-header {
+
+    padding: 0.75rem 1.25rem;
+
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,0.03);
+
+
+    // border-bottom: 1px solid rgba(0,0,0,0.125);
+
+    h2 {
+    // font-family: 'Baloo Chettan 2', cursive;
+    // font-size: 18px;
+      font-size: 1.6rem; //16px;
+      font-weight: regular;
+      padding-bottom: 0px;
+      margin-top: .8rem; //8px;
+    }
+  }
+
+  .form-header-slim {
+
+    align-items: center;
+    padding: 0px 2rem;
+    margin-bottom: 0;
+    // background-color: rgba(16,97,126,.5);
+    background-color:  rgba(0,0,0,0.04);
+
+
+    // background-color: rgba(#94b4a4,.8);
+    // background-color: rgba(#ffa5a5,.8);
+
+    // background: linear-gradient(rgba(0,0,0,0.03),rgba(16,97,126,.05) );
+
+    border-bottom: 1px solid rgba(100,100,100,0.125);
+
+    h2 {
+    // font-family: 'Baloo Chettan 2', cursive;
+      font-size: 1.6rem; //16px;
+      font-weight: regular;
+      padding-bottom: 0px;
+      padding-top: .6rem; //6px;
+
+      margin-bottom: .6rem; //6px;
+    }
+  }
+
+
+  .form-body {
+
+    // display: flex; //déplacé media
+    justify-content: space-around;
+
+    // font-family: 'Baloo Chettan 2', cursive;
+    // padding: 4px;
+    font-size: 1.4rem; //14px;
+
+    a {
+      text-decoration: none;
+      // width: 100px;
+    }
+
+    p {
+      // margin-top: 16px;
+      // margin-bottom: .4rem; //4px;
+      margin-bottom: 1rem; //4px;
+      font-size: 1.4rem; //14px;
+      text-decoration: underline;
+    }
+
+
+
+
+
+    .form-group {
+      margin-bottom: .2rem; //2px;
+
+
+      .form-control {
+          //listes deroulantes
+          color: black;
+          font-size: 1.4rem; //14px;
+          padding: .2rem 1.2rem; //2px 12px;
+
+          // width: 60%;
+        }
+
+      // radio button dans le form qui sont collés
+      .form-check-input {
+        position: relative;
+         margin-right: 0.3125rem;
+      }
+
+        .col-form-label {
+          width: 30%;
+          // max-width: 50%;
+        }
+    }
+
+    .check {
+      // margin: 8px;
+      // background-color:  rgba(0,0,0,0.1);
+      // background-color: rgba(#94b4a4,.5);
+      // background-color:  rgba(0,0,0,0.01);
+
+      // width: 60%; //déplacé media
+      background-color:  rgba(0,0,0,0.01);
+
+      padding: 1.2rem; //12px;
+
+
+    }
+
+    .collection{
+      // width: 40%; //deplacé dans media
+      // background-color: rgba(#94b4a4,.2);
+      // background-color:  rgba(130,130,13,0.1);
+      // background-color:  rgba(255,255,255,0.9);
+      background-color:  rgba(0,0,0,0.01);
+      padding: 1.2rem; //12px;
+    }
+
+
+    .collection-1 {
+      // height: 80%;
+
+    // text-align: center;
+    }
+    .bottom {
+
+      text-align: center;
+      padding: 1.6rem;
+        .btn {
+        // font-family: 'Baloo Chettan 2', cursive;
+        font-size: 1.6rem;
+        }
+
+    }
+
+ }
+
+  .form-line {
+    border-bottom: 1px solid rgba(0,0,0,0.125);
+  }
+
+
+
+}
+
+

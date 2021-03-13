@@ -1,0 +1,369 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "animate.css/animate";
+@import "social-share-button";
+
+// Your CSS partials
+@import "components/index";
+@import "pages/index";
+
+@import "themes/index";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400;500;600;700;800&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+// utilisation dans les classes
+// font-family: 'IBM Plex Sans', sans-serif;
+
+body {
+    // position: relative;
+    // min-height: 100vh;
+    // background-color: $app-back-color;
+    // background-color: <%= set_background_color %>;
+
+  // height: 100vh;
+  // overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  // perspective: 2px;
+
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 14px; // compatibilie IE
+  font-size: 1.4rem;
+}
+
+h1 { /* =24px */
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 24px; // compatibilie IE
+  font-size: 2.4rem;
+  }
+
+h2 {
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 18px; // compatibilie IE
+  font-size: 1.8rem; //18px;
+  }
+
+p, a, .btn {
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 16px; // compatibilie IE
+  font-size: 1.6rem; //16px;
+}
+
+
+// social button
+$size: 2.4rem; //24px;
+.social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+  }
+}
+
+
+// CSS global
+.my-general-dynamic-container, .my-form-dynamic-container, .my-container-35, .my-container-55, .my-container-65, .my-container-75, .my-container-85, .my-container-100{
+    margin: 0 auto;
+    // width: 1300px;
+    // width: 65%;
+    // position: relative;
+    min-height: 100%;
+
+    // display: flex;
+    // justify-content: flex-start; // alignées a gauche
+
+  #h1-home{
+
+  font-family: 'Baloo Chettan 2', cursive;
+  margin-top: 3rem; //30px;
+  // margin: 0;
+  color: black;
+
+  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 3.2rem; //32px;
+  font-weight: bold;
+  }
+
+  #h2-home {
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 2.4rem; //24px;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  }
+
+  #h3-home {
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 2.2rem; //22px;
+  font-weight: bold;
+  opacity: .7;
+  margin: 0;
+  }
+}
+
+.my-container-35 {
+width: 35%;
+}
+
+.my-container-55 {
+width: 55%;
+}
+
+
+.my-container-65 {
+width: 65%;
+}
+
+.my-container-75 {
+width: 75%;
+}
+
+
+.my-container-85{
+width: 85%;
+}
+
+
+.my-container-100{
+width: 100%;
+}
+
+
+
+// html { font-size: 62.5%; }
+
+
+@media (min-width: 1201px) {
+  /* For a screen > 1201px, this CSS will be read */
+  html { font-size: 62.5%; }
+  .my-general-dynamic-container {
+    width: 70%;
+  }
+  .my-form-dynamic-container {
+    width: 40%;
+  }
+
+  .navbar-lewagon .navbar-brand { font-size: 2.4rem; }
+
+  .banner { padding: 15rem 15rem; }
+
+  .grille .card-product {
+    display: flex;
+    align-items: start;
+    .my-carousel {
+      width: 55%;
+      img {
+        padding-bottom: 1.6rem;
+        height: 50rem; //500px;
+      }
+    }
+
+    .card-product-infos {
+      width: 45%;
+    }
+  }
+
+  .my-search-form {
+    width: 100%;
+    .form-body {
+      display: flex;
+      .form-group {
+        flex-wrap: wrap;
+      }
+      .check {
+        width: 60%;
+        padding-bottom: 1.2rem;
+       }
+      .collection {
+         width: 40%;
+      }
+    }
+  }
+
+  .footer {
+    padding: 0px 5rem;
+    // .footer-mentions { display: block;}
+    .footer-mentions-legal {display: flex;}
+  }
+
+
+}
+
+@media (max-width: 1200px) {
+  /* For a screen < 1200px, this CSS will be read */
+  html { font-size: 60%; }
+.my-general-dynamic-container {
+    width: 70%;
+  }
+  .my-form-dynamic-container {
+    width: 50%;
+  }
+
+  .navbar-lewagon .navbar-brand { font-size: 2.4rem; }
+
+  .banner { padding: 15rem 7rem; }
+
+  .grille .card-product {
+    display: block;
+    align-items: start;
+    .my-carousel {
+      width: 100%;
+      img {
+        padding-bottom: 0;
+        height: 40rem;
+      }
+      p { display: none;} //cache le ajouté par
+    }
+
+    .card-product-infos {
+      width: 100%;
+     }
+  }
+
+
+  .my-search-form {
+    width: 100%;
+    .form-body {
+      display: flex;
+      .form-group {
+        flex-wrap: wrap;
+      }
+      .check {
+        width: 60%;
+       }
+      .collection {
+         width: 40%;
+      }
+    }
+  }
+
+  .footer {
+    padding: 0px 3rem;
+    .footer-mentions-legal {display: none;}
+  }
+
+
+}
+
+
+@media (max-width: 992px) {
+  /* For a screen < 992px, this CSS will be read */
+  // html { font-size: 52.5%; }
+  html { font-size: 59%; }
+
+  .my-general-dynamic-container {
+    width: 80%;
+  }
+
+  .my-form-dynamic-container {
+    width: 60%;
+  }
+
+  .navbar-lewagon .navbar-brand { font-size: 2.2rem; }
+
+  .banner { padding: 7rem 0rem; }
+
+  .my-search-form {
+    width: 100%;
+    .form-body {
+      display: flex;
+      .form-group {
+        flex-wrap: wrap;
+      }
+      .check {
+        width: 70%;
+       }
+      .collection {
+         width: 30%;
+      }
+    }
+  }
+
+
+  .footer {
+    padding: 0px 3rem;
+    .footer-mentions-legal {display: none;}
+  }
+
+
+}
+
+@media (max-width: 768px) {
+  /* For a screen < 768px, this CSS will be read */
+  html { font-size: 58%; }
+  // html { font-size: 45%; }
+
+  .my-general-dynamic-container {
+    width: 90%;
+  }
+
+  .my-form-dynamic-container {
+    width: 70%;
+  }
+
+  .grille .card-product .my-carousel img {
+    height: 30rem;
+  }
+
+  .navbar-lewagon .navbar-brand { font-size: 2.1rem; }
+
+  .banner { padding: 2rem 0rem; }
+
+  .my-search-form {
+    width: 90%;
+    .form-body {
+      display: block;
+      .form-group {
+        flex-wrap: nowrap;
+      }
+      .check {
+        width: 100%;
+        padding-bottom: 0rem; //12px;
+       }
+      .collection {
+         width: 100%;
+      }
+    }
+  }
+
+
+  .footer {
+    padding: 0px 2.5rem;
+    .footer-mentions-legal {display: none;}
+  }
+}
+
+@media (max-width: 576px) {
+  /* For a screen < 576px, this CSS will be read */
+  html { font-size: 55%; }
+
+  .my-general-dynamic-container {
+      width: 98%;
+  }
+  .my-form-dynamic-container {
+      width: 80%;
+  }
+
+  .navbar-lewagon .navbar-brand { font-size: 2rem; }
+
+  .banner { padding: 2rem 0rem; }
+
+  .footer {
+    padding: 0px 2rem;
+   .footer-mentions-legal {display: none;}
+  }
+
+}
+
+

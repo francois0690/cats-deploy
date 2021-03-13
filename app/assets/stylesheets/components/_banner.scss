@@ -1,0 +1,52 @@
+.banner {
+  // width: 90%;
+
+  // div
+  background-size: cover;
+  background-position: center;
+
+  // padding: 15rem 15rem; //déplacé en média
+
+
+ // background-attachment: fixed;
+
+  margin-bottom: 3rem; //30px;
+
+  border-radius: .3rem; //3px;
+  font-family: 'Baloo Chettan 2', cursive;
+
+  h1 {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 6px rgba(0,0,0,.9);
+    font-size: 3rem; //32px;
+    font-weight: bold;
+    margin-bottom: 1.2rem; //12px;
+  }
+
+  h2 {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    opacity: 1;
+    font-size: 2rem; //20px;
+    margin-bottom: .8rem; //8px;
+    white-space:pre-line;
+
+  }
+
+  p {
+    margin: 0;
+    font-size: 2rem; //20px;
+    color: white;
+    opacity: .7;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    margin-bottom: .8rem; //8px;
+    white-space:pre-line;
+  }
+
+
+
+}
+
+

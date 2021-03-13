@@ -1,0 +1,205 @@
+.my-form {
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  margin: 0 auto;
+  max-width: 100%;
+
+  margin-top: 2.4rem; //24px;
+  margin-bottom: 2.4rem; //24px;
+
+  border: 1px solid rgba(0,0,0,0.125);
+  border-radius: 0.25rem;
+  // padding: 1.25rem;
+  border-color: #00617f;
+  // rgb(16, 97, 126)
+
+
+
+  .form-header {
+
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,0.04);
+    // background-color: rgba(16, 97, 126,0.13);
+
+    border-bottom: 1px solid rgba(0,0,0,0.125);
+
+    h2 {
+    // font-family: 'Baloo Chettan 2', cursive;
+    // font-size: 1.8rem; //18px;
+    font-weight: regular;
+    padding-bottom: 0px;
+    padding-top: .8rem; //8px;
+    }
+  }
+
+  .form-header-slim {
+
+    padding: 0.25rem 1.25rem;
+    margin-bottom: 0;
+    // background-color: rgba(16,97,126,.5);
+    background-color:  rgba(0,0,0,0.04);
+// background: linear-gradient(rgba(0,0,0,0.03),rgba(16,97,126,.05) );
+
+    border-bottom: 1px solid rgba(0,0,0,0.125);
+
+    h2 {
+    // font-family: 'Baloo Chettan 2', cursive;
+    // font-size: 1.8rem; //18px;
+    font-weight: regular;
+    padding-bottom: 0px;
+    padding-top: .8rem; //8px;
+    }
+  }
+
+  .form-control {
+    color: black;
+    font-size: 1.6rem;
+  }
+
+  // radio button dans le form qui sont collés
+  .form-check-input {
+    position: relative;
+     margin-right: 0.3125rem;
+  }
+  .form-body {
+
+    // font-family: 'Baloo Chettan 2', cursive;
+
+    // flex: 1 1 auto;
+    // min-height: 1px;
+    padding: 1.25rem;
+    font-size: 1.6rem;
+    a {
+      text-decoration: none;
+      // width: 100px;
+    }
+
+    p {
+      // margin-top: 16px;
+      margin-bottom: 0px;
+      // text-decoration: underline;
+    }
+
+    #photo {
+    border-radius: 5%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.8);
+    // padding: 2px 2px;
+    // margin: 4px;
+    margin: .4rem; //4px;
+
+    object-fit: cover;
+    }
+
+
+.pdf_preview {
+  width: 70%;
+  height: 20rem;
+}
+
+ #delete_photo {
+
+  position: relative;
+  transition: all 0.5s ease;
+  &:hover {
+    // opacity: .3;
+    #icon_deleted {
+      opacity: 1;
+    }
+  }
+
+
+ #icon_deleted {
+    position: absolute;
+    // top: 3.3rem; //33px;
+    // left: 4.3rem; //43px;
+
+    // 8 rem
+    // top: 6%; //33px;
+    // left: 28%; //43px;
+
+    // 4 rem
+    // top: 25%; //33px;
+    // left: 34%; //43px;
+
+
+    top: 25%; //33px;
+    left: 34%; //43px;
+
+    transition: all 0.3s ease-in;
+    // transition: all 0.5s ease;
+    font-family: 'Baloo Chettan 2', cursive;
+    // color: black;
+    color: #734046;
+    font-size: 4rem; //38px;
+    font-weight: regular;
+    // text-align: center;
+    opacity: .0;
+    // attention si z-index alors il sera devant mais ne reagit plus au hover de l'element
+    // z-index: 1;
+          }
+
+
+  #div_photo {
+      width: 12rem; //120px;
+      height: 12rem; //120px;
+      border-radius: 5%;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.8);
+      // padding: 2px 2px;
+      // margin: 4px;
+      margin: .4rem; //4px;
+      object-fit: cover;
+      opacity: 1;
+
+      transition: all 0.5s ease;
+      &:hover {
+        opacity: .2;
+      }
+    }
+  }
+
+
+
+    #logo {
+      box-shadow: 0 1px 2px rgba(0,0,0,0.8);
+    }
+
+    #avatar {
+      // box-shadow: 0 1px 2px rgba(0,0,0,0.8);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    // .delete_photo {
+    //   // transition: transform 0.3s ease;
+
+
+    //   &:hover {
+    //     // opacity: .5;
+    //     // color: linear-gradient(rgba(0,0,0,0.03),rgba(16,97,126,.8) );
+    //   }
+    // }
+
+
+  }
+
+   .form-line {
+    border-bottom: 1px solid rgba(0,0,0,0.125);
+  }
+
+
+
+}
+
+
+.color-selector {
+  width: 15rem; //150px;
+&:hover {
+  cursor: pointer;
+  }
+
+}
+
+

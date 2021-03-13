@@ -1,0 +1,43 @@
+<div class="footer">
+  <div class="footer-links">
+    <!-- <a href="#"><i class="fab fa-github"></i></a> -->
+
+    <% unless @theme.instagram_url == "" %>
+      <a href="<%= @theme.instagram_url%>"><i class="fab fa-instagram"></i></a>
+    <% end %>
+    <% unless @theme.facebook_url == "" %>
+      <a href="<%= @theme.facebook_url%>"><i class="fab fa-facebook"></i></a>
+    <% end %>
+    <% unless @theme.twitter_url == "" %>
+      <a href="<%= @theme.twitter_url%>"><i class="fab fa-twitter"></i></a>
+    <% end %>
+    <!-- <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a> -->
+    <!-- <a href="#"><i class="fab fa-linkedin"></i></a> -->
+  </div>
+
+  <div class="footer-mentions">
+
+    <p> <%= @theme.name %></p>
+    <div class="footer-mentions-legal">
+      <% unless @theme.legal_mention == "" %>
+         <p> <%= @theme.legal_mention %> &nbsp; - &nbsp;</p>
+      <% end %>
+      <% unless @theme.siret_number == "" %>
+        <p>SIRET : <%= @theme.siret_number %> </p>
+      <% end %>
+    </div>
+
+  </div>
+
+<!--   <div class="footer-form">
+    <%# if @theme.sign_form.attached? %>
+      <p> <%# link_to "Formulaire d'adhésion", rails_blob_path(@theme.sign_form, disposition: :inline)%></p>
+    <%# end %>
+  </div>
+ -->
+  <div class="footer-copyright">
+    <!-- <p id="name"> <%= @theme.name %> &nbsp;</p> -->
+    <p>Franfran <i class="fas fa-rocket"></i></p>
+  </div>
+</div>

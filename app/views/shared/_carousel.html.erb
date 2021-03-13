@@ -1,0 +1,45 @@
+
+<div class="my-carousel">
+
+
+  <div id="option<%= animal.id %>" class="carousel slide" data-ride="carousel" data-interval="0">
+
+    <!-- affiche les indicators en dessous si j'ai au moins 2 photos -->
+    <% if animal.photos.count > 1 %>
+      <ol class="carousel-indicators">
+          <% animal.photos.each_with_index do |photo, i| %>
+              <li data-target="#option<%= animal.id %>" data-slide-to="<%= i %>" class="<%= i == 0 ? 'active' : '' %>"></li>
+          <% end %>
+      </ol>
+    <% end %>
+
+    <div class="carousel-inner">
+
+      <% animal.photos.each_with_index do |photo, i| %>
+        <div class="<%= i == 0 ? 'carousel-item active' : 'carousel-item'%>">
+          <img src="<%= cl_image_path photo.key %>" alt="animal<%= i%>">
+        </div>
+      <% end %>
+
+
+    </div>
+
+  <!-- affiche les chevrons si au moins deux images -->
+  <% if animal.photos.count > 1 %>
+    <a class="carousel-control-prev" href="#option<%= animal.id %>" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#option<%= animal.id %>" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  <% end %>
+
+
+
+  </div>
+
+<p>Ajouté<%= animal.sex.capitalize.chr == "F" ? "e" : "" %>  le <%= animal.added_date %> par <%= animal.added_by %></p>
+
+</div>

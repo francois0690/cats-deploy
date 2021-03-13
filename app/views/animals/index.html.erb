@@ -1,0 +1,26 @@
+<!-- <h1 id="h1-home">Notre association : <%= @theme.name %></h1> -->
+<!-- <p>app desktop</p> -->
+<div class="my-container-100">
+
+<%= render 'shared/banner' , theme: @theme%>
+</div>
+
+<div class="my-general-dynamic-container">
+  <!-- <div class="left-menu"> -->
+    <%= render "animal_search_form" %>
+  <!-- </div> -->
+
+  <!-- <div class="center-view"> -->
+
+
+    <%= render 'shared/card' , animals: @animals%>
+
+    <!-- <p id="caca">texte du bas😽🙈</p> -->
+  <!-- </div> -->
+
+</div>
+
+
+
+
+

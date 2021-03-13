@@ -1,0 +1,239 @@
+
+<div class="grille">
+
+<% if @search_res %>
+  <%  if @animals.count == 0   %>
+    <p id="result-anchor">Pas de résultat trouvé</p>
+  <% elsif @animals.count == 1  %>
+    <p id="result-anchor">1 résultat trouvé</p>
+  <% else %>
+    <p id="result-anchor"><%= @animals.count %> résultats trouvés</p>
+  <% end %>
+
+<% else %>
+  <br>
+  <!-- <p><%= @animals.count%> animaux</p> -->
+<% end %>
+
+
+  <% animals.each do |c| %>
+    <div class="card-product">
+
+      <%= render 'shared/carousel' ,animal: c%>
+
+
+      <div class="card-product-infos">
+        <div class="card-products-infos-name">
+
+          <h1><%= c.name %></h1>
+
+          <% if user_signed_in? && current_user.admin? %>
+            <div class="admin-bar">
+                <%= link_to edit_animal_path(c),
+                        url: edit_animal_path(c),
+                        method: :get,
+                        class: "icones edit" do %>
+                  <i class="fas fa-edit"></i>
+                <% end %>
+
+                <%= link_to animal_path(c),
+                         method: :delete,
+                         data: { confirm: "Voulez-vous supprimer #{c.name} ?", title: "Suppression de l'animal", commit: "Oui", cancel: "Annuler" },
+                         class: "icones suppr" do %>
+                  <i class="fas fa-trash"></i>
+                <% end %>
+             </div>
+           <% else %>
+            <%= social_share_button_tag(c.name, url: root_path, desc: c.name) %>
+
+           <% end %>
+
+           <div class="fav-bar">
+              <% if user_signed_in? %>
+               <% if current_user.favorite?(c) %>
+
+
+
+                    <%= link_to favorite_path(c), remote: true, method: :DELETE, class: "icones-fav favorite visible" do %>
+                      <i class="fas fa-heart"></i>
+                    <% end %>
+
+                     <%= link_to animal_favorites_path(c), remote: true, method: :POST, class: "icones-fav" do %>
+                      <i class="far fa-heart"></i>
+                    <% end %>
+
+                <% else %>
+
+                    <%= link_to favorite_path(c), remote: true, method: :DELETE, class: "icones-fav favorite" do %>
+                      <i class="fas fa-heart"></i>
+                    <% end %>
+
+                    <%= link_to animal_favorites_path(c), remote: true, method: :POST, class: "icones-fav visible" do %>
+                      <i class="far fa-heart"></i>
+                    <% end %>
+
+
+
+                <% end %>
+              <% else %>
+
+                <%= link_to new_user_session_path, class: "icones-fav-not-signed" do %>
+                  <i class="far fa-heart"></i>
+                <% end %>
+
+              <% end %>
+          </div>
+        </div>
+
+
+        <h2><%= c.description %></h2>
+
+        <div class="card-product-line-horizontal"></div>
+
+        <table class="card-product-table">
+          <% unless c.espece.nil? %>
+            <tr>
+              <td class="card-product-td-s">Espèce</td>
+              <td class="card-product-td"><%= c.espece.capitalize %></td>
+            </tr>
+          <% end %>
+
+        <table class="card-product-table">
+          <% unless c.race.nil? %>
+            <tr>
+              <td class="card-product-td-s">Race</td>
+              <td class="card-product-td"><%= c.race.capitalize %></td>
+            </tr>
+          <% end %>
+
+          <% unless c.birth_date.nil? %>
+            <tr>
+              <td class="card-product-td-s">Age</td>
+              <td class="card-product-td"><%= age(c.birth_date)%> (<%= age_in_month_str(c.birth_date) %>) </td>
+            </tr>
+          <% end %>
+
+          <% unless c.sex.nil? %>
+            <tr>
+              <td class="card-product-td-s">Sexe</td>
+              <td class="card-product-td"><%= c.sex.capitalize %></td>
+            </tr>
+          <% end %>
+
+          <% unless c.sterilized.nil? %>
+            <tr>
+              <td class="card-product-td-s">Stérilisé<%= c.sex.capitalize.chr == "F" ? "e" : "" %>  </td>
+              <td class="card-product-td"><%= c.sterilized ? "Oui" : "Non" %></td>
+            </tr>
+          <% end %>
+
+          <% unless c.hair.nil? %>
+            <tr>
+              <td class="card-product-td-s">Poil</td>
+              <td class="card-product-td"><%= c.hair.capitalize %></td>
+            </tr>
+          <% end %>
+
+          <% unless c.color.nil? %>
+            <tr>
+              <td class="card-product-td-s">Couleur</td>
+              <td class="card-product-td"><%= c.color.capitalize %></td>
+            </tr>
+          <% end %>
+
+
+
+          <% unless c.size.nil? %>
+            <tr>
+              <td class="card-product-td-s">Taille</td>
+              <td class="card-product-td"><%= c.size.capitalize %></td>
+            </tr>
+          <% end %>
+
+          <tr>
+            <td class="card-product-td-s">Possède un handicap</td>
+            <td class="card-product-td"><%= c.handicap ? "Oui" : "Non" %></td>
+          </tr>
+
+          <tr>
+            <td class="card-product-td-s">Animal disponible</td>
+            <td class="card-product-td"><%= c.is_available ? "Oui" : "Non" %></td>
+          </tr>
+
+
+        </table>
+
+
+        <div class="card-product-line-horizontal"></div>
+
+
+          <table class="card-products-infos-compatible">
+            <tr>
+              <td class="card-products-infos-compatible-s">Compatible avec</td>
+              <td class="card-products-infos-compatible-t">Chats
+                <% if c.cat_compatible %>
+                <i class="fas fa-check-square"></i>
+                <% else %>
+                <i class="fas fa-square"></i>
+                <% end %>
+              </td>
+
+              <td class="card-products-infos-compatible-t">Chiens
+                <% if c.dog_compatible %>
+                <i class="fas fa-check-square"></i>
+                <% else %>
+                <i class="fas fa-square"></i>
+                <% end %>
+              </td>
+
+              <td class="card-products-infos-compatible-t">Enfants
+                <% if c.child_compatible %>
+                <i class="fas fa-check-square"></i>
+                <% else %>
+                <i class="fas fa-square"></i>
+                <% end %>
+              </td>
+
+
+            </tr>
+          </table>
+
+          <div class="card-product-line-horizontal"></div>
+
+          <table class="card-product-table">
+
+                      <tr>
+                        <td class="card-product-td-s"><i class="fas fa-address-card"></i> &nbsp; Contact</td>
+                        <td class="card-product-td"><%= mail_to c.contact %></td>
+                      </tr>
+
+                      <tr>
+                        <td class="card-product-td-s"><i class="fas fa-map-marker-alt"></i> &nbsp; Localisation</td>
+                        <td class="card-product-td"><%= c.host_name %></td>
+                      </tr>
+                      <% unless c.price.nil? || c.price == 0 %>
+                        <tr>
+                          <td class="card-product-td-s">Frais d'adoption</td>
+                          <td class="card-product-td"><%= c.price %> €</td>
+                        </tr>
+                      <% end %>
+          </table>
+
+
+      </div>
+
+
+    </div>
+  <% end %>
+</div>
+
+
+<% if @search_res %>
+  <script>
+        const offset = document.getElementById("result-anchor");
+        window.scrollTo({
+          top: offset.offsetTop - 10,
+          behavior: 'smooth'
+        });
+  </script>
+  <% end %>

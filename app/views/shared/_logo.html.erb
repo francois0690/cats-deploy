@@ -1,0 +1,9 @@
+  <%= link_to root_path do %>
+  <div class="logo">
+
+
+     <%= cl_image_tag theme.logo.key ,width: 80, height: 80, crop: :fill , gravity: :face, class: "logo-image" %>
+     <p class="logo-baseline "> <%= theme.name %></p>
+
+  </div>
+  <% end %>

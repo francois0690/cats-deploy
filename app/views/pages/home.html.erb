@@ -1,0 +1,16 @@
+<h1 id="h1-home">Notre association : <%= @theme.name %></h1>
+
+
+<%= render 'shared/banner' , theme: @theme%>
+
+<h2 id="h2-home">Nos animaux disponibles</h2>
+<br>
+<%= render 'shared/search'%>
+
+<%= render 'shared/card' , animals: @animals%>
+
+
+
+
+
+
