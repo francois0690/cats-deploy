@@ -28,8 +28,6 @@ gem 'redis', '~> 4.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
-gem 'nokogiri'
-
 # ruby '2.6.5'
 
 # # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
