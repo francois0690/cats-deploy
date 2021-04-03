@@ -27,7 +27,7 @@ set env_vars: {
   RAILS_ENV: "production",
   RAILS_LOG_TO_STDOUT: "1",
   RAILS_SERVE_STATIC_FILES: "1",
-  CLOUDINARY: :prompt,
+  CLOUDINARY_URL: :prompt,
   DATABASE_URL: :prompt,
   SECRET_KEY_BASE: :prompt
 }
