@@ -8,7 +8,7 @@ plugin "puma"
 plugin "rbenv"
 plugin "./plugins/cats-deploy.rb"
 
-host "deployer2@192.168.1.19"
+host "pi@192.168.1.19"
 
 set application: "cats-deploy"
 set deploy_to: "/var/www/%{application}"
@@ -16,7 +16,6 @@ set nodenv_node_version: "10.19.0"
 set nodenv_yarn_version: "1.22.5"
 set git_url: "https://github.com/francois0690/cats-deploy.git"
 set git_branch: "master"
-set puma_port: "3000"
 set git_exclusions: %w[
   .tomo/
   spec/
