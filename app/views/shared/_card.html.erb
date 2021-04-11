@@ -3,18 +3,18 @@
 
 <% if @search_res %>
   <%  if @animals.count == 0   %>
-    <p id="result-anchor">Pas de résultat trouvé</p>
+    <p id="result-anchor"><i class="fas fa-angle-right"></i>&nbsp;Pas de résultat trouvé</p>
   <% elsif @animals.count == 1  %>
-    <p id="result-anchor">1 résultat trouvé</p>
+    <p id="result-anchor"><i class="fas fa-angle-right"></i>&nbsp;1 résultat trouvé</p>
   <% else %>
-    <p id="result-anchor"><%= @animals.count %> résultats trouvés</p>
+    <p id="result-anchor"><i class="fas fa-angle-right"></i>&nbsp;<%= @animals.count %> résultats trouvés</p>
   <% end %>
 
 <% else %>
   <!-- <br> -->
 
   <%  if @animals.count >1   %>
-    <p> Notre base contient <%= @animals.count %> animaux</p>
+    <p><i class="fas fa-angle-right"></i> &nbsp;Notre base contient <%= @animals.count %> animaux</p>
   <% end %>
 
   <!-- <p><%= @animals.count%> animaux</p> -->
