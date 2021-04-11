@@ -36,6 +36,8 @@ import { initUncheck } from '../components/uncheck';
 import { initSearchSelectRace } from '../components/search_selrace';
 import { initScrollAuto } from '../components/scroll_auto';
 
+import { initDropDownForm } from '../components/drop_down_form';
+
 
 // initSearchSelectRace
 
@@ -51,6 +53,7 @@ document.addEventListener('turbolinks:load', () => {
   initToggleVisibility();
   initUncheck();
   initSearchSelectRace();
+  initDropDownForm();
   // initScrollAuto();
 
 });

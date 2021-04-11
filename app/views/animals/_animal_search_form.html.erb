@@ -1,10 +1,17 @@
-<div class="my-search-form">
+<div class="my-search-bar" id="click">
  <!-- id="id-search-form"> -->
-  <div class="form-header-slim">
-    <h2>Rechercher votre animal</h2>
-  </div>
+  <!-- <div class="form-header-slim" id="click"> -->
+      <h2>Rechercher votre animal</h2>
+      <!-- <h2>&nbsp;&nbsp;&nbsp;</h2> -->
+      <span class="arrow"></span>
+</div>
 
-  <div class="form-body">
+
+<div class="my-search-form" id="hidden-info">
+ <!-- id="id-search-form"> -->
+
+
+  <div class="form-body" >
 
     <div class="check">
       <%= simple_form_for :search,
@@ -181,7 +188,7 @@
             <br>
             <!-- bouton  -->
 
-            <%= f.button :submit, "Rechercher", url: root_path, method: :get, class: "btn btn-success", id: "click-search-form", remote: true %>
+            <%= f.button :submit, "Rechercher", url: root_path, method: :get, class: "btn btn-success", id: "click-search-form save", remote: true %>
 
             <!-- <i class="fas fa-search">Rechercher</i> -->
 
