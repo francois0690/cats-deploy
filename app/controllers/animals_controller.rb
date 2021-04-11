@@ -8,17 +8,19 @@ class AnimalsController < ApplicationController
   # @@arr_photos = []
 
   def index
-    # p "---------------------call de index-----------------------"
-    # p params[:search]
+     p "---------------------------------------------------------"
+     p "---------------------call de index-----------------------"
+     p "params de search form params[:search]=#{params[:search]}"
 
 
 
 
 
     @user = current_user
+    p "current_user=#{@user}"
     @theme = Config.first.theme
 
-    p params[:search]
+    #p params[:search]
     # p params[:search].flatten
     # binding.pry
     # hash pour ne garder que les values presentent

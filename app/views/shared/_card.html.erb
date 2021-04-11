@@ -11,7 +11,12 @@
   <% end %>
 
 <% else %>
-  <br>
+  <!-- <br> -->
+
+  <%  if @animals.count >1   %>
+    <p> Notre base contient <%= @animals.count %> animaux</p>
+  <% end %>
+
   <!-- <p><%= @animals.count%> animaux</p> -->
 <% end %>
 
