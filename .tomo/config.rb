@@ -9,7 +9,6 @@ plugin "rbenv"
 plugin "./plugins/cats-deploy.rb"
 
 host "deployer@192.168.1.19"
-
 set application: "cats-deploy"
 set deploy_to: "/var/www/%{application}"
 set nodenv_node_version: "10.19.0"
