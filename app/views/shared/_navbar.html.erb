@@ -11,11 +11,11 @@
 
 
     <% if @theme.avatar.attached? %>
-      <%= link_to root_path do %>
+      <%= link_to root_path, method: :get do %>
         <%= cl_image_tag @theme.avatar.key, class: "nav-avatar" %>
       <% end %>
     <% else %>
-      <%= link_to root_path do %>
+      <%= link_to root_path, method: :get do %>
         <%= image_tag "patte_chat_coeur.jpg", class:"nav-avatar" %>
       <% end %>
     <% end %>

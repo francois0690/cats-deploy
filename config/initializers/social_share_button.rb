@@ -4,5 +4,5 @@ SocialShareButton.configure do |config|
                           # xing reddit hacker_news telegram odnoklassniki whatsapp_app whatsapp_web)
 
 
-  config.allow_sites = %w(twitter facebook pinterest email whatsapp_app telegram)
+  config.allow_sites = %w(whatsapp_app email facebook pinterest)
 end
