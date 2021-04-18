@@ -188,13 +188,15 @@
             <br>
             <!-- bouton  -->
 
-            <%= f.button :submit, "Rechercher", url: root_path, method: :get, class: "btn btn-success", id: "click-search-form save", remote: true %>
+            <%= f.button :submit, "Rechercher", url: root_path, method: :get, class: "btn btn-primary btn-block", id: "click-search-form save", remote: true %>
 
             <!-- <i class="fas fa-search">Rechercher</i> -->
 
 
             <!-- <%# link_to 'Effacer la selection', root_path(anchor: 'id-search-form') , class: "btn btn-outline-secondary" %> -->
-            <%= link_to 'Effacer la selection', root_path, method: :get, class: "btn btn-outline-secondary" %>
+
+            <!-- boutton annuler la selection deleted -->
+            <!-- <%# link_to 'Effacer la selection', root_path, method: :get, class: "btn btn-outline-secondary" %> -->
 
 <!--             <%# link_to root_path, class: "btn btn-outline-secondary" do %>
                       Effacer la selection

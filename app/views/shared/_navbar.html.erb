@@ -26,9 +26,14 @@
 
 
     <% unless @theme.name == nil %>
-      <a class="navbar-brand animate__animated animate__flipInX" href="#"> <%= @theme.name %></a>
+
+      <%= link_to root_path, method: :get, class: "navbar-brand animate__animated animate__flipInX" do %>
+        <%= @theme.name %>
+
+      <% end %>
+      <!-- <a class="navbar-brand animate__animated animate__flipInX" href=""> <%= @theme.name %></a> -->
     <% else %>
-      <a class="navbar-brand" href="#">Pas de titre</a>
+      <a class="navbar-brand" >Pas de titre</a>
     <% end %>
 
 
