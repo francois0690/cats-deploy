@@ -2,10 +2,15 @@
 <html>
   <head>
     <title>Mes Animaux</title>
+    <meta name="description" content="Adoptez un animal !">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> -->
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
@@ -40,8 +45,12 @@
     <% end %>
 
 <br>
-    <%= render 'shared/footer' %>
 
+
+
+    <% unless request.env['PATH_INFO'].include?('/users/')%>
+      <%= render 'shared/footer' %>
+    <% end %>
 
 
   </body>

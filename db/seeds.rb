@@ -137,7 +137,7 @@ c8.photos.attach(io: f20, filename: 'cat12.jpg', content_type: 'image/jpg')
 c8.contact = "francois0690@gmail.com"
 c8.added_date = "2020-08-15"
 c8.added_by = "Francois"
-c8.host_name = "Gérard à Villefranche"
+c8.host_name = "Glagla à Champagney"
 c8.price = 80
 c8.is_available = true
 c8.save!
@@ -146,7 +146,7 @@ c8.save!
 c9 = Animal.new
 c9.name = "Roulette"
 c9.description = "Hasmter trop mignon, actuellement en formation pour apprendre à courrir dans une roue.
-J'aime les carottes et les calins."
+J'aime les carottes, les navets et les calins."
 c9.color = Animal::COLOR[rand(0..(Animal::COLOR.length-1))]
 c9.birth_date = "2020-08-01"
 c9.sterilized = false
@@ -165,7 +165,7 @@ c9.photos.attach(io: f16, filename: 'cat16.jpg', content_type: 'image/jpg')
 c9.contact = "francois0690@gmail.com"
 c9.added_date = "2020-05-01"
 c9.added_by = "Peggy"
-c9.host_name = "Ginette à Roane"
+c9.host_name = "Couysin à Oyonnax"
 c9.price = 6
 c9.is_available = true
 c9.save!
@@ -205,7 +205,7 @@ c1 = Animal.new
 c1.name = "Piliou"
 c1.description = "Petite chatte tigrée, sevrée, propre et trop mignone !
 J'aime la proximité du radiateur.
-Au départ timide, Piliou à su gagner en confiance au fil des jours, aidée par son petit partenaire plutôt aventurier qu'elle suit partout.
+Au départ timide, j'ai su gagner en confiance au fil des jours, aidée par mon petit partenaire plutôt aventurier que suit partout.
 Je ronronne facilement et aime les lasers sur les murs.
 Ma passion ? La paté"
 c1.color = Animal::COLOR[rand(0..(Animal::COLOR.length-1))]
@@ -227,18 +227,18 @@ c1.photos.attach(io: f2, filename: 'cat2.jpg', content_type: 'image/jpg')
 c1.contact = "francois0690@gmail.com"
 c1.added_date = "2020-10-23"
 c1.added_by = "François"
-c1.host_name = "Bérangère à Bron"
+c1.host_name = "Skud à Hilton"
 c1.price = 110
 c1.is_available = true
 c1.save!
 
 
 c2 = Animal.new
-c2.name = "Rouquemounte"
+c2.name = "Rouquemoute"
 c2.description = "Chatte sénior rouquine, calme, propre et caline.
 J'aime dormir ou faire la sièste, au calme, toujours.
 J'ai un léger handicap sur une patte arrière mais cela ne me gène pas car j'ai passé l'age de sauter sur les canapés.
-Je suis très caline et ronronne très facilement. Je dors volontier dans le lit faisant office de bouillote.
+Je suis très caline et ronronne très facilement. Je dors volontier dans le lit faisant office de bouillote pour mon humain.
 Attention, je déteste les enfants."
 c2.color = Animal::COLOR[rand(0..(Animal::COLOR.length-1))]
 c2.birth_date = "2014-08-01"
@@ -251,7 +251,7 @@ c2.sex = Animal::SEX[rand(0..(Animal::SEX.length-1))]
 c2.cat_compatible = true
 c2.dog_compatible = true
 c2.child_compatible = false
-c2.handicap = false
+c2.handicap = true
 c2.photos.attach(io: f3, filename: 'cat3.jpg', content_type: 'image/jpg')
 c2.photos.attach(io: f4, filename: 'cat4.jpg', content_type: 'image/jpg')
 c2.photos.attach(io: f5, filename: 'cat5.jpg', content_type: 'image/jpg')
@@ -259,7 +259,7 @@ c2.photos.attach(io: f5, filename: 'cat5.jpg', content_type: 'image/jpg')
 c2.contact = "peggy@gmail.com"
 c2.added_date = "2020-09-18"
 c2.added_by = "Peggy"
-c2.host_name = "Raymond à St Priest"
+c2.host_name = "Floflo à Pierre-Chatel"
 c2.price = 60
 c2.is_available = true
 c2.save!
@@ -269,9 +269,9 @@ c2.save!
 c3 = Animal.new
 c3.name = "Doudou"
 c3.description = "Petite chatte trop mignonne.
-Véritable moteur à ronron, J'adore les calins et les jeux en tous genre.
+Véritable moteur à ronron, j'adore les calins et les jeux en tous genre.
 Je suis à l'affut du moindre bruit et suis très curieuse.
-Une fenêtre ou un balcon devrons impérativement être sécurisée, je suis trop tentée par les trucs qui passent devant moi."
+Une fenêtre ou un balcon devrons impérativement être sécurisée car je suis trop tentée par les trucs qui passent devant moi."
 c3.color = Animal::COLOR[rand(0..(Animal::COLOR.length-1))]
 c3.birth_date = "2020-08-01"
 c3.sterilized = true
@@ -289,7 +289,7 @@ c3.photos.attach(io: f10, filename: 'cat10.jpg', content_type: 'image/jpg')
 c3.contact = "francois0690@gmail.com"
 c3.added_date = "2020-09-02"
 c3.added_by = "Peggy"
-c3.host_name = "Ginette à Roane"
+c3.host_name = "Lucie à Poligny"
 c3.price = 140
 c3.is_available = true
 c3.save!
@@ -304,8 +304,8 @@ c5.description = "Petite chatte du mois de juin 2020, propre et joueuse.
 Deteste le boeuf mais raffole du saumon.
 J'ai une expérience de chasseusse de mouche incomparable.
 Par contre, j'ai un peu peur des chiens.
-Se laisse carresser facilement et ronronne.
-J'ai besoin d'une famille pour m'épanouir"
+Je me laisse carresser facilement et ronronne.
+J'ai besoin d'une famille pour m'épanouir."
 c5.color = Animal::COLOR[rand(0..(Animal::COLOR.length-1))]
 c5.birth_date = "2020-06-01"
 c5.sterilized = true
@@ -324,7 +324,7 @@ c5.photos.attach(io: f8, filename: 'cat8.jpg', content_type: 'image/jpg')
 c5.contact = "francois0690@gmail.com"
 c5.added_date = "2020-06-16"
 c5.added_by = f.first_name
-c5.host_name = "Amandine à Bourg en Bresse"
+c5.host_name = "Nico à Corenc"
 c5.price = 130
 c5.is_available = true
 # c5.adoption_date = "2020-08-20"
@@ -356,7 +356,7 @@ c6.photos.attach(io: f17, filename: 'cat17.jpg', content_type: 'image/jpg')
 c6.contact = "francois0690@gmail.com"
 c6.added_date = "2020-09-02"
 c6.added_by = "Francois"
-c6.host_name = "Paulette à Givors"
+c6.host_name = "Seb à Illkirch"
 c6.price = 240
 c6.is_available = true
 c6.save!
@@ -371,7 +371,7 @@ c7.name = "Bouboule"
 c7.description = "Petit chaton tout neuf et trop mignon.
 Je ne suis pas seuvré mais j'adore déjà jouer.
 J'ai actuellement une maman qui s'occupe bien de moi et qui me donne une éducation féline.
-Ce que je préfère après le jeu, c'est me frotter contre vos jambes et venir sur les genoux."
+Ce que je préfère après le jeu, c'est me frotter contre vos jambes et venir sur vos genoux."
 c7.color = Animal::COLOR[rand(0..(Animal::COLOR.length-1))]
 c7.birth_date = "2020-08-01"
 c7.sterilized = false
@@ -389,7 +389,7 @@ c7.photos.attach(io: f19, filename: 'cat19.jpg', content_type: 'image/jpg')
 c7.contact = "francois0690@gmail.com"
 c7.added_date = "2021-01-01"
 c7.added_by = "Peggy"
-c7.host_name = "Ginette à Roane"
+c7.host_name = "Maxime à Lyon"
 c7.price = 95
 c7.is_available = true
 c7.save!
@@ -407,7 +407,7 @@ p "#{Animal.count} animaux crées"
 t1 = Theme.new
 t1.name = "Les Cats Trop Mignons"
 t1.basic_description = "Trouvez votre chat chez LCTM !"
-t1.full_description = "Nous avons toute sortes de chats, pour le moment placés en familles d'accueil, qui n'attendent que vous."
+t1.full_description = "Nous avons toute sorte de chats, pour le moment placés en familles d'accueil, qui n'attendent que vous."
 t1.email = "francois0690@gmail.com"
 t1.phone = "0682587155"
 t1.address = "15 rue des Jasmis, 69008 Lyon"
@@ -433,7 +433,7 @@ t1.save!
 t2 = Theme.new
 t2.name = "Les Oreilles Fraiches"
 t2.basic_description = "Trouvez votre chat chez LOF !"
-t2.full_description = "Spécialisés dans les chats mignons, vous trouverez votre bonheur sur notre site. N'hésiter pas à faire un don pour nous soutenir."
+t2.full_description = "Spécialisés dans les chats mignons, vous trouverez votre bonheur sur notre site. N'hésitez pas à faire un don pour nous soutenir."
 t2.email = "peggy@gmail.com"
 t2.phone = "0682838485"
 t2.address = "43 rue des Jonquilles, 69008 Lyon"
