@@ -196,20 +196,28 @@
             <!-- <%# link_to 'Effacer la selection', root_path(anchor: 'id-search-form') , class: "btn btn-outline-secondary" %> -->
 
             <!-- boutton annuler la selection deleted -->
-            <!-- <%# link_to 'Effacer la selection', root_path, method: :get, class: "btn btn-outline-secondary" %> -->
+            <!-- <%# link_to 'Effacer la selection', root_path, method: :get, class: "btn btn-outline-secondary", id: "click-delete-search", remote: true %> -->
 
-<!--             <%# link_to root_path, class: "btn btn-outline-secondary" do %>
+<!--             <button id="click-delete-search2", class="btn btn-outline-secondary">
                       Effacer la selection
-            <%# end %> -->
-            <br>
+            </button>
+ -->
+ <br>
+
+            <%= f.button :button, 'Effacer la selection', type: 'reset', class: 'btn btn-outline-secondary btn-block' %>
+
+            <% end %>
+
+            <!-- <button id="click-delete-search", class="btn btn-outline-secondary btn-block">Effacer la selection</button> -->
             </div>
+
+
 
     </div>
   </div>
 
 
 
-  <% end %>
 
 
 </div>

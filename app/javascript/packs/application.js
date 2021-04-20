@@ -32,7 +32,6 @@ import { initToggleFavoriteIcon } from '../components/favorite';
 import { initFromSelectRace } from '../components/form_selrace';
 import { initPreview } from '../components/preview';
 import { initToggleVisibility } from '../components/toggle';
-import { initUncheckSelection } from '../components/uncheck';
 import { initSearchSelectRace } from '../components/search_selrace';
 import { initScrollAuto } from '../components/scroll_auto';
 
@@ -51,7 +50,6 @@ document.addEventListener('turbolinks:load', () => {
   initFromSelectRace();
   initPreview();
   initToggleVisibility();
-  initUncheckSelection();
   initSearchSelectRace();
   initDropDownForm();
   // initScrollAuto();
