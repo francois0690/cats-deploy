@@ -153,7 +153,7 @@
                                     data: { confirm: "Voulez-vous supprimer cette photo ?", title: "Suppression de la photo", commit: "Oui", cancel: "Annuler" },
                                     remote: true,
                                     id: "delete_photo" do %>
-                                        <p id="icon_deleted"><i class="fas fa-trash"></i></p>
+                                        <p id="icon_deleted"><i class="fas fa-times-circle"></i></p>
 
                                       <div style="background-image: linear-gradient(rgba(0,0,0,0),rgba(255,255,255,0)),url(<%= cl_image_path photo.key,  width: 120, height: 120, crop: :fill %>)" alt="photo" id="div_photo">
 
@@ -252,11 +252,11 @@
 
     <!-- parametres cachés -->
 
-
+      <% if animal.new_record? %>
       <%= f.input :added_date,
                    as: :hidden,
                    input_html: { value: Date.today } %>
-
+      <% end %>
     <%= f.input :added_by,
                  as: :hidden,
                  input_html: { value: "#{current_user.first_name} #{current_user.last_name.chr.capitalize}"  } %>

@@ -126,7 +126,7 @@
     top: 25%; //33px;
     left: 34%; //43px;
 
-    transition: all 0.3s ease-in;
+    transition: opacity 0.2s ease-in;
     // transition: all 0.5s ease;
     font-family: 'Baloo Chettan 2', cursive;
     // color: black;
@@ -151,9 +151,10 @@
       object-fit: cover;
       opacity: 1;
 
-      transition: all 0.5s ease;
+      transition: opacity 0.2s ease;
       &:hover {
-        opacity: .2;
+        opacity: .3;
+        // transform: scale(0.9);
       }
     }
   }

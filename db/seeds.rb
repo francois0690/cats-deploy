@@ -121,7 +121,7 @@ c8.description = "Petit rat des villes, affectueux et très sage.
 J'adore cuisiner pour toute la famille.
 Ma spécialité ? Le rasotto au parmesan, un régal !"
 c8.color = Animal::COLOR[rand(0..(Animal::COLOR.length-1))]
-c8.birth_date = "2020-08-01"
+c8.birth_date = "2020-04-01"
 c8.sterilized = false
 c8.espece = "Rongeur" #Animal::ESPECE[rand(0..(Animal::ESPECE.length-1))]
 c8.race = "Rat" # Animal::CAT_RACE[rand(0..(Animal::CAT_RACE.length-1))]
@@ -135,7 +135,7 @@ c8.handicap = false
 c8.photos.attach(io: f21, filename: 'cat13.jpg', content_type: 'image/jpg')
 c8.photos.attach(io: f20, filename: 'cat12.jpg', content_type: 'image/jpg')
 c8.contact = "francois0690@gmail.com"
-c8.added_date = "2020-08-15"
+c8.added_date = "2020-06-16"
 c8.added_by = "Francois"
 c8.host_name = "Glagla à Champagney"
 c8.price = 80
@@ -148,7 +148,7 @@ c9.name = "Roulette"
 c9.description = "Hasmter trop mignon, actuellement en formation pour apprendre à courrir dans une roue.
 J'aime les carottes, les navets et les calins."
 c9.color = Animal::COLOR[rand(0..(Animal::COLOR.length-1))]
-c9.birth_date = "2020-08-01"
+c9.birth_date = "2020-05-01"
 c9.sterilized = false
 c9.espece = "Rongeur" #Animal::ESPECE[rand(0..(Animal::ESPECE.length-1))]
 c9.race = "Hamster" # Animal::CAT_RACE[rand(0..(Animal::CAT_RACE.length-1))]
@@ -163,7 +163,7 @@ c9.photos.attach(io: f14, filename: 'cat14.jpg', content_type: 'image/jpg')
 c9.photos.attach(io: f15, filename: 'cat15.jpg', content_type: 'image/jpg')
 c9.photos.attach(io: f16, filename: 'cat16.jpg', content_type: 'image/jpg')
 c9.contact = "francois0690@gmail.com"
-c9.added_date = "2020-05-01"
+c9.added_date = "2020-07-15"
 c9.added_by = "Peggy"
 c9.host_name = "Couysin à Oyonnax"
 c9.price = 6
@@ -178,7 +178,7 @@ J'ai habité un temps dans une jardinière de fenêtre mais j'étais allergique 
 Maintenant je suis au chaud, j'ai de bonnes graines bio à manger et je cherche une famille pour m'épanouir.
 Etonnement pour un pigeon, j'aime les caresses et je roucoule."
 c10.color = Animal::COLOR[rand(0..(Animal::COLOR.length-1))]
-c10.birth_date = "2020-03-01"
+c10.birth_date = "2020-07-01"
 c10.sterilized = false
 c10.espece = "Oiseau" #Animal::ESPECE[rand(0..(Animal::ESPECE.length-1))]
 c10.race = "Pigeon" # Animal::CAT_RACE[rand(0..(Animal::CAT_RACE.length-1))]
@@ -192,7 +192,7 @@ c10.handicap = false
 c10.photos.attach(io: f11, filename: 'cat11.jpg', content_type: 'image/jpg')
 c10.photos.attach(io: f12, filename: 'cat12.jpg', content_type: 'image/jpg')
 c10.contact = "francois0690@gmail.com"
-c10.added_date = "2020-05-01"
+c10.added_date = "2020-08-01"
 c10.added_by = "Peggy"
 c10.host_name = "Barnabé à Lyon"
 c10.price = 40
@@ -207,9 +207,9 @@ c1.description = "Petite chatte tigrée, sevrée, propre et trop mignone !
 J'aime la proximité du radiateur.
 Au départ timide, j'ai su gagner en confiance au fil des jours, aidée par mon petit partenaire plutôt aventurier que suit partout.
 Je ronronne facilement et aime les lasers sur les murs.
-Ma passion ? La paté"
+Ma passion ? La paté tout simplement"
 c1.color = Animal::COLOR[rand(0..(Animal::COLOR.length-1))]
-c1.birth_date = "2020-10-01"
+c1.birth_date = "2020-07-01"
 c1.sterilized = false
 # c1.espece = Animal::ESPECE[rand(0..(Animal::ESPECE.length-1))]
 c1.espece = "Chat"
@@ -225,7 +225,7 @@ c1.handicap = false #rand > 0.5
 c1.photos.attach(io: f1, filename: 'cat1.jpg', content_type: 'image/jpg')
 c1.photos.attach(io: f2, filename: 'cat2.jpg', content_type: 'image/jpg')
 c1.contact = "francois0690@gmail.com"
-c1.added_date = "2020-10-23"
+c1.added_date = "2020-08-23"
 c1.added_by = "François"
 c1.host_name = "Skud à Hilton"
 c1.price = 110
@@ -234,7 +234,7 @@ c1.save!
 
 
 c2 = Animal.new
-c2.name = "Rouquemoute"
+c2.name = "Roockmount"
 c2.description = "Chatte sénior rouquine, calme, propre et caline.
 J'aime dormir ou faire la sièste, au calme, toujours.
 J'ai un léger handicap sur une patte arrière mais cela ne me gène pas car j'ai passé l'age de sauter sur les canapés.
@@ -273,7 +273,7 @@ Véritable moteur à ronron, j'adore les calins et les jeux en tous genre.
 Je suis à l'affut du moindre bruit et suis très curieuse.
 Une fenêtre ou un balcon devrons impérativement être sécurisée car je suis trop tentée par les trucs qui passent devant moi."
 c3.color = Animal::COLOR[rand(0..(Animal::COLOR.length-1))]
-c3.birth_date = "2020-08-01"
+c3.birth_date = "2020-06-01"
 c3.sterilized = true
 c3.espece = "Chat" #Animal::ESPECE[rand(0..(Animal::ESPECE.length-1))]
 c3.race = "Européen" # Animal::CAT_RACE[rand(0..(Animal::CAT_RACE.length-1))]
@@ -322,7 +322,7 @@ c5.photos.attach(io: f6, filename: 'cat6.jpg', content_type: 'image/jpg')
 c5.photos.attach(io: f7, filename: 'cat7.jpg', content_type: 'image/jpg')
 c5.photos.attach(io: f8, filename: 'cat8.jpg', content_type: 'image/jpg')
 c5.contact = "francois0690@gmail.com"
-c5.added_date = "2020-06-16"
+c5.added_date = "2020-10-16"
 c5.added_by = f.first_name
 c5.host_name = "Nico à Corenc"
 c5.price = 130
@@ -341,7 +341,7 @@ Quoi dire à part que je suis trop mignon ? Rien.
 Je serais déjà probablement adopté avant que vous ayez eu le temps de bouger.
 Ma passion, la chasse aux insectes..."
 c6.color = Animal::COLOR[rand(0..(Animal::COLOR.length-1))]
-c6.birth_date = "2020-11-07"
+c6.birth_date = "2020-10-07"
 c6.sterilized = true
 c6.espece = "Chat" #Animal::ESPECE[rand(0..(Animal::ESPECE.length-1))]
 c6.race = "Européen" # Animal::CAT_RACE[rand(0..(Animal::CAT_RACE.length-1))]
@@ -354,7 +354,7 @@ c6.child_compatible = true
 c6.handicap = false
 c6.photos.attach(io: f17, filename: 'cat17.jpg', content_type: 'image/jpg')
 c6.contact = "francois0690@gmail.com"
-c6.added_date = "2020-09-02"
+c6.added_date = "2020-12-02"
 c6.added_by = "Francois"
 c6.host_name = "Seb à Illkirch"
 c6.price = 240
@@ -373,7 +373,7 @@ Je ne suis pas seuvré mais j'adore déjà jouer.
 J'ai actuellement une maman qui s'occupe bien de moi et qui me donne une éducation féline.
 Ce que je préfère après le jeu, c'est me frotter contre vos jambes et venir sur vos genoux."
 c7.color = Animal::COLOR[rand(0..(Animal::COLOR.length-1))]
-c7.birth_date = "2020-08-01"
+c7.birth_date = "2020-12-01"
 c7.sterilized = false
 c7.espece = "Chat" #Animal::ESPECE[rand(0..(Animal::ESPECE.length-1))]
 c7.race = "Européen" # Animal::CAT_RACE[rand(0..(Animal::CAT_RACE.length-1))]
@@ -387,7 +387,7 @@ c7.handicap = false
 c7.photos.attach(io: f18, filename: 'cat18.jpg', content_type: 'image/jpg')
 c7.photos.attach(io: f19, filename: 'cat19.jpg', content_type: 'image/jpg')
 c7.contact = "francois0690@gmail.com"
-c7.added_date = "2021-01-01"
+c7.added_date = "2021-04-01"
 c7.added_by = "Peggy"
 c7.host_name = "Maxime à Lyon"
 c7.price = 95
@@ -407,7 +407,7 @@ p "#{Animal.count} animaux crées"
 t1 = Theme.new
 t1.name = "Les Cats Trop Mignons"
 t1.basic_description = "Trouvez votre chat chez LCTM !"
-t1.full_description = "Nous avons toute sorte de chats, pour le moment placés en familles d'accueil, qui n'attendent que vous."
+t1.full_description = "Nous avons toute sorte de chats, pour le moment placés en familles d'accueil, qui n'attendent que vous"
 t1.email = "francois0690@gmail.com"
 t1.phone = "0682587155"
 t1.address = "15 rue des Jasmis, 69008 Lyon"
@@ -433,7 +433,7 @@ t1.save!
 t2 = Theme.new
 t2.name = "Les Oreilles Fraiches"
 t2.basic_description = "Trouvez votre chat chez LOF !"
-t2.full_description = "Spécialisés dans les chats mignons, vous trouverez votre bonheur sur notre site. N'hésitez pas à faire un don pour nous soutenir."
+t2.full_description = "Spécialisés dans les chats mignons, vous trouverez votre bonheur sur notre site. N'hésitez pas à faire un don pour nous soutenir"
 t2.email = "peggy@gmail.com"
 t2.phone = "0682838485"
 t2.address = "43 rue des Jonquilles, 69008 Lyon"

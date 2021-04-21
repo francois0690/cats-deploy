@@ -62,9 +62,9 @@ class AnimalsController < ApplicationController
         # p search_hash
 # binding.pry
       if search_hash.size > 0
-        @animals = Animal.includes([:photos_attachments]).where(search_hash).order('updated_at DESC')
+        @animals = Animal.includes([:photos_attachments]).where(search_hash).order('added_date DESC')
       else
-        @animals = Animal.includes([:photos_attachments]).order('updated_at DESC')
+        @animals = Animal.includes([:photos_attachments]).order('added_date DESC')
       end
 
       @search_res = true
@@ -72,7 +72,7 @@ class AnimalsController < ApplicationController
 
     else
       #pas de recherche, affichage uniquement de index
-      @animals = Animal.includes([:photos_attachments]).order('updated_at DESC')
+      @animals = Animal.includes([:photos_attachments]).order('added_date DESC')
       @search_res = false
     end
 
@@ -83,7 +83,7 @@ class AnimalsController < ApplicationController
 
 
   def favorites
-    @animals = current_user.animals.includes([:photos_attachments]).order('updated_at DESC')
+    @animals = current_user.animals.includes([:photos_attachments]).order('added_date DESC')
     @user = current_user
     @theme = Config.first.theme
   end
