@@ -99,6 +99,8 @@ Rails.application.routes.draw do
   patch 'profil/users_id', to: 'users#update_profil', as: :update_profil
 
 
+  # page de test
+  get 'test', to: 'pages#test', as: 'test'
 
 
 

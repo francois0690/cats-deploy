@@ -37,6 +37,8 @@ import { initScrollAuto } from '../components/scroll_auto';
 
 import { initDropDownForm } from '../components/drop_down_form';
 
+import { initShare } from '../components/share';
+
 
 // initSearchSelectRace
 
@@ -54,4 +56,5 @@ document.addEventListener('turbolinks:load', () => {
   initDropDownForm();
   // initScrollAuto();
 
+initShare();
 });
