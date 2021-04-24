@@ -22,7 +22,7 @@
 
 
   <% animals.each do |c| %>
-    <div class="card-product">
+    <div class="card-product" id="card-anchor<%=c.id %>">
 
       <%= render 'shared/carousel' ,animal: c%>
 
@@ -49,7 +49,40 @@
                 <% end %>
              </div>
            <% else %>
-            <%= social_share_button_tag(c.name, url: root_path, desc: c.name) %>
+            <!-- <%# social_share_button_tag(c.name, url: root_path, desc: c.name) %> -->
+
+              <div class="social-bar">
+
+                <% if request.user_agent.downcase.include?("mobile") %>
+                    <% @name_for_js = "#{c.name}" %>
+                    <% @url_for_js = "#{request.base_url}/#card-anchor#{c.id}" %>
+
+                    <%= link_to "", class: "share" do %>
+                    <i class="icones fas fa-share-alt"></i>
+                    <% end %>
+                <% else %>
+                    <!-- Whatsapp share -->
+                    <% url_encoded = url_encode("#{request.base_url}/#card-anchor#{c.id}") %>
+                    <%= link_to "", "https://api.whatsapp.com/send?text=#{url_encoded}", class: "icones fab fa-whatsapp" %>
+
+
+                    <!-- Instagram share -->
+                    <!-- <a href=""><i class="fab fa-instagram"></i></a> -->
+
+                    <!-- facebook share -->
+                    <%= link_to "", "https://www.facebook.com/sharer/sharer.php?u=#{url_encoded}", class: "icones fab fa-facebook" %>
+                    <!-- <a href=""><i class="fab fa-facebook"></i></a> -->
+
+                    <!-- twitter share -->
+                    <!-- <a href=""><i class="fab fa-twitter"></i></a> -->
+                    <%= link_to "", "https://twitter.com/intent/tweet?text=#{url_encoded}", class: "icones fab fa-twitter" %>
+
+
+                    <!-- email share -->
+                    <%= link_to "", "mailto:?subject=J'ai trouvé ceci, cela pourrait vous interesser ! &amp;body=Regardez ce lien : #{request.base_url}/#card-anchor#{c.id}", class: "icones far fa-envelope" %>
+
+                 <% end %>
+              </div>
 
            <% end %>
 

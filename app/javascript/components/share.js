@@ -18,9 +18,9 @@ if (btn) {
     if (navigator.share) {
       console.log("it's working");
       navigator.share({
-        title: "Mes animaux",
+        title: "<%= @name_for_js >",
         text: "Partagez cette fiche",
-        url: "https://www.google.fr" //`${link.innerText}`
+        url: "<%= @url_for_js >" //  "https://www.google.fr" //`${link.innerText}`
       }).then(() => {
         console.log("Link shared");
 

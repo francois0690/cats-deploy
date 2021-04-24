@@ -6,9 +6,34 @@
 
 </div>
 
-
+<!-- <p>request.user_agent inclu mobile ?=<%= request.user_agent.downcase.include?("mobile") %></p> -->
 
 <p id="demo"></p>
+
+<p>TEST avec request.user_agent</p>
+<p> <%= "whatsapp://send?#{request.base_url}/#card-anchor32" %> </p>
+<p> <%= url_encode("#{request.base_url}/#card-anchor32") %> </p>
+
+
+<% if request.user_agent.downcase.include?("mobile") %>
+
+
+<% else %>
+
+<% ref_encoded = url_encode("#{request.base_url}/#card-anchor32") %>
+<%= link_to "", "https://api.whatsapp.com/send?text=#{ref_encoded}", class: "fab fa-whatsapp" %>
+
+
+
+      <a href=""><i class="fab fa-instagram"></i></a>
+
+      <a href=""><i class="fab fa-facebook"></i></a>
+
+      <a href=""><i class="fab fa-twitter"></i></a>
+
+
+<% end %>
+
 
 
 <script>
@@ -27,8 +52,19 @@ if (mobileDevice == true ) {
 }
 else
 {
-  const res2 = `<%= social_share_button_tag("nom", url: root_path, desc: "nom") %>`;
+  // const res2 = `<%# social_share_button_tag("nom", url: root_path, desc: "nom") %>`;
+  const res2 = `<a href="https://www.addtoany.com/add_to/whatsapp?linkurl=https%3A%2F%2Fwww.example.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/whatsapp.svg" width="32" height="32" style="background-color:red"></a>`
+
+  const res3 = `<a href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Fwww.demo-fr.xyz&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/email.svg" width="32" height="32" style="background-color:royalblue"></a>`
+
+  const res4 = `<a href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fwww.example.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/facebook.svg" width="24" height="24" style="background-color:royalblue"></a>`
+
+  const res5 = `<a href="https://www.addtoany.com/add_to/pinterest?linkurl=https%3A%2F%2Fwww.example.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/pinterest.svg" width="24" height="24" style="background-color:royalblue"></a>`
+
   divMobile.insertAdjacentHTML("beforeend", res2);
+  divMobile.insertAdjacentHTML("beforeend", res3);
+  divMobile.insertAdjacentHTML("beforeend", res4);
+  divMobile.insertAdjacentHTML("beforeend", res5);
 }
 
 
@@ -50,22 +86,15 @@ else
 
 <!-- AddToAny END -->
 
-<a href="https://www.addtoany.com/add_to/whatsapp?linkurl=https%3A%2F%2Fwww.example.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/whatsapp.svg" width="32" height="32" style="background-color:royalblue"></a>
-<a href="https://www.addtoany.com/add_to/whatsapp?linkurl=https%3A%2F%2Fwww.example.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/whatsapp.svg" width="32" height="32"></a>
+<a href="https://www.addtoany.com/add_to/whatsapp?linkurl=https%3A%2F%2Fwww.demo-fr.xyz&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/whatsapp.svg" width="32" height="32" style="background-color:royalblue"></a>
 
-<a href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Fwww.example.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/email.svg" width="32" height="32" style="background-color:royalblue"></a>
-<a href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fwww.example.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/facebook.svg" width="32" height="32" style="background-color:royalblue"></a>
+<a href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Fwww.demo-fr.xyz&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/email.svg" width="32" height="32" style="background-color:royalblue"></a>
+
+<a href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fwww.demo-fr.xyz&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/facebook.svg" width="32" height="32" style="background-color:royalblue"></a>
+
 <a href="https://www.addtoany.com/add_to/pinterest?linkurl=https%3A%2F%2Fwww.example.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/pinterest.svg" width="32" height="32" style="background-color:royalblue"></a>
+
 <a href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fwww.example.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/twitter.svg" width="32" height="32" style="background-color:royalblue"></a>
 
 
 <!-- <a href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fwww.example.com&amp;linkname=caca" target="_blank"><img src="https://static.addtoany.com/buttons/facebook.svg" width="32" height="32" style="background-color:royalblue"></a> -->
-
-<!-- <a href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fwww.example.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/facebook.svg" width="32" height="32" style="background-color:royalblue"></a>
-<a href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fwww.example.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/twitter.svg" width="32" height="32" style="background-color:royalblue"></a>
-<a href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Fwww.example.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/email.svg" width="32" height="32" style="background-color:royalblue"></a>
- -->
-
-
-
-

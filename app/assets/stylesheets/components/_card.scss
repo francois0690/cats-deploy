@@ -123,7 +123,7 @@ margin-top: 2.4rem; //24px;
         .icones {
           text-decoration: none;
           font-family: 'Baloo Chettan 2', cursive;
-          font-size: 2rem; //20px;
+          font-size: 2.4rem; //20px;
           font-weight: bold;
           margin-bottom: 0;
           margin-top: .8rem; //8px;
@@ -137,6 +137,23 @@ margin-top: 2.4rem; //24px;
             color: #734046;
         }
       }
+
+      .social-bar {
+
+         .icones {
+          text-decoration: none;
+          // font-family: 'Baloo Chettan 2', cursive;
+          font-size: 2.4rem; //20px;
+          font-weight: bold;
+          margin-bottom: 0;
+          margin-top: .8rem; //8px;
+          // text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+          padding-right: 1.2rem; //12px;
+          color: rgba(black,.8);
+        }
+
+      }
+
 
       .fav-bar {
 
