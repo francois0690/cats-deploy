@@ -1,10 +1,10 @@
 <h1 id="h1-home">PAGE DE TEST</h1>
 
 
-
+<!--
 <div id="mobile">
 
-</div>
+</div> -->
 
 <!-- <p>request.user_agent inclu mobile ?=<%= request.user_agent.downcase.include?("mobile") %></p> -->
 
@@ -34,7 +34,7 @@
 
 <% end %>
 
-
+<!--
 
 <script>
   document.getElementById("demo").innerHTML = "navigator.platform=" + navigator.userAgent;
@@ -46,7 +46,7 @@
   const divMobile = document.getElementById('mobile');
   // console.log(divMobile);
 if (mobileDevice == true ) {
-  const res1 = `<%= link_to nil, class: "share" do %><i class="fas fa-share-alt-square"></i><% end %>`;
+  const res1 = `<%# link_to nil, class: "share" do %><i class="fas fa-share-alt-square"></i><%# end %>`;
   // console.log("imgHTML=", imgHTML);
   divMobile.insertAdjacentHTML("beforeend", res1);
 }
@@ -73,7 +73,7 @@ else
   // console.log(toto);
   // const tata = "<%= @tata %>" = pipi
 </script>
-
+ -->
 
 
 <p>social button test</p>

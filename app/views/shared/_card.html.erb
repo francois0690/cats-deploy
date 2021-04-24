@@ -54,11 +54,12 @@
               <div class="social-bar">
 
                 <% if request.user_agent.downcase.include?("mobile") %>
-                    <% @name_for_js = "#{c.name}" %>
-                    <% @url_for_js = "#{request.base_url}/#card-anchor#{c.id}" %>
 
-                    <%= link_to "", class: "share" do %>
-                    <i class="icones fas fa-share-alt"></i>
+                    <p hidden class="link-to-share"><%= "#{request.base_url}/#card-anchor#{c.id}" %> </p>
+
+
+                    <%= link_to nil, class: "share" do %>
+                      <i class="icones fas fa-share-alt"></i>
                     <% end %>
                 <% else %>
                     <!-- Whatsapp share -->
