@@ -13,18 +13,17 @@ if (btn) {
   btn.addEventListener('click', (event) => {
       console.log("link.innerText=",link.innerText);
       console.log(event);
-
+console.log
       // const eventId = btn.dataset.event;
       // console.log(eventId);
-      const toto = "<%= @@url_for_js >";
-      console.log("@@url_for_js=",toto);
 
     if (navigator.share) {
       console.log("it's working");
       navigator.share({
         title: "Mes animaux",
         text: "Partagez cette fiche",
-        url: `${link.innerText}` //"<%= @@url_for_js >" //  "https://www.google.fr" //`${link.innerText}`
+        url: link.innerText
+
       }).then(() => {
         console.log("Link shared");
 
@@ -39,3 +38,6 @@ if (btn) {
 };
 
 export { initShare };
+
+
+//` //"<%= @@url_for_js >" //  "https://www.google.fr" //`${link.innerText}`
