@@ -47,7 +47,7 @@
 <br>
 
 
-
+    <!-- enleve le footer si devise -->
     <% unless request.env['PATH_INFO'].include?('/users/')%>
       <%= render 'shared/footer' %>
     <% end %>

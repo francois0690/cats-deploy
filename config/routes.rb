@@ -8,12 +8,15 @@ Rails.application.routes.draw do
 
   # root to: 'pages#home'
 
-
+# page de test
+    get 'test', to: 'pages#test', as: 'test'
 
   unauthenticated do
     # root to: 'pages#home'
     root to: 'animals#index'
     get 'dropdown', to: 'animals#dropdown'
+
+
   end
 
   authenticated do
@@ -97,10 +100,6 @@ Rails.application.routes.draw do
 
   #patch le profil
   patch 'profil/users_id', to: 'users#update_profil', as: :update_profil
-
-
-  # page de test
-  get 'test', to: 'pages#test', as: 'test'
 
 
 

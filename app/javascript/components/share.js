@@ -1,6 +1,14 @@
+// Si API Web Share n'est pas supportée, alors la méthode sera undefined
+//icone share sur mobile
+
+
 const initShare = () => {
+
+
 const btn = document.querySelector('.share');
 // const link = document.querySelector('.link-to-share');
+
+
 if (btn) {
   btn.addEventListener('click', (event) => {
       // console.log(link.innerText)
@@ -10,9 +18,9 @@ if (btn) {
     if (navigator.share) {
       console.log("it's working");
       navigator.share({
-        title: "Caca",
-        text: "On partage",
-        url: "https://www.google.fr"
+        title: "Mes animaux",
+        text: "Partagez cette fiche",
+        url: "https://www.google.fr" //`${link.innerText}`
       }).then(() => {
         console.log("Link shared");
 
