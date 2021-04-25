@@ -5,36 +5,49 @@
 const initShare = () => {
 
 
-const btn = document.querySelector('.share');
-const link = document.querySelector('.link-to-share');
+const socialBars = document.querySelectorAll('.social-bar');
+// const btn = document.querySelectorAll('.share');
+// const link = document.querySelectorAll('.link-to-share');
 
 
-if (btn) {
-  btn.addEventListener('click', (event) => {
-      console.log("link.innerText=",link.innerText);
-      console.log(event);
-console.log
-      // const eventId = btn.dataset.event;
-      // console.log(eventId);
+socialBars.forEach((sb,i) => {
 
-    if (navigator.share) {
-      console.log("it's working");
-      navigator.share({
-        title: "Mes animaux",
-        text: "Partagez cette fiche",
-        url: link.innerText
+  // if (btn) {
+    const btn = sb.querySelector('.share');
+    const link = sb.querySelector('.link-to-share');
 
-      }).then(() => {
-        console.log("Link shared");
+      // console.log("link.innerText=",link.innerText, "index=",i);
+  if (btn) {
+    btn.addEventListener('click', (event) => {
+        console.log("click sur link.innerText=",link.innerText, "index=",i);
+        // console.log(event);
 
-      })
-      .catch(console.error);
-    } else {
-      console.log("Link was not shared");
-    };
+        // const eventId = btn.dataset.event;
+        // console.log(eventId);
 
-  });
-}
+      if (navigator.share) {
+        console.log("it's working");
+        navigator.share({
+          title: "Mes animaux",
+          text: "Cela peut vous interesser : ",
+          url: link.innerText
+
+        }).then(() => {
+          console.log("Link shared");
+
+        })
+        .catch(console.error);
+      } else {
+        console.log("Link was not shared");
+      };
+
+    });
+  }
+
+
+});
+
+
 };
 
 export { initShare };
