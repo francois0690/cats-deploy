@@ -58,7 +58,7 @@
                     <p hidden class="link-to-share"><%= "#{request.base_url}/#card-anchor#{c.id}" %> </p>
 
 
-                    <%= link_to nil, class: "share" do %>
+                    <%= link_to nil, method: :get, remote: true, class: "share" do %>
                       <i class="icones fas fa-share-alt"></i>
                     <% end %>
                 <% else %>
@@ -80,7 +80,7 @@
 
 
                     <!-- email share -->
-                    <%= link_to "", "mailto:?subject=J'ai trouvé ceci, cela pourrait vous interesser ! &amp;body=Regardez ce lien : #{request.base_url}/#card-anchor#{c.id}", class: "icones far fa-envelope" %>
+                    <%= link_to "", "mailto:?subject=J'ai trouvé ceci, cela pourrait vous intéresser ! &amp;body=Regardez ce lien : #{request.base_url}/#card-anchor#{c.id}", class: "icones far fa-envelope" %>
 
                  <% end %>
               </div>

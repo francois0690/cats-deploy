@@ -29,7 +29,7 @@ socialBars.forEach((sb,i) => {
         console.log("it's working");
         navigator.share({
           title: "Mes animaux",
-          text: "Cela peut vous interesser : ",
+          text: "Cela peut vous intéresser : ",
           url: link.innerText
 
         }).then(() => {
