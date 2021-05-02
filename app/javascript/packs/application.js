@@ -38,6 +38,9 @@ import { initSearchSelectRace } from '../components/search_selrace';
 import { initDropDownForm } from '../components/drop_down_form';
 
 import { initShare } from '../components/share';
+// import { initToolTipBT } from '../components/tool_tip_bt';
+import { initToolTip } from '../components/tool_tip';
+
 
 
 // initSearchSelectRace
@@ -56,5 +59,7 @@ document.addEventListener('turbolinks:load', () => {
   initDropDownForm();
   // initScrollAuto();
 
- initShare();
+  initShare();
+ // initToolTipBT();
+  initToolTip();
 });

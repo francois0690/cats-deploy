@@ -8,7 +8,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "animate.css/animate";
-@import "social-share-button";
+// @import "social-share-button";
 
 // Your CSS partials
 @import "components/index";
@@ -64,14 +64,14 @@ p, a, .btn {
 
 
 // social button
-$size: 2.4rem; //24px;
-.social-share-button {
-  .ssb-icon {
-    background-size: $size $size;
-    height: $size;
-    width: $size;
-  }
-}
+// $size: 2.4rem; //24px;
+// .social-share-button {
+//   .ssb-icon {
+//     background-size: $size $size;
+//     height: $size;
+//     width: $size;
+//   }
+// }
 
 
 // CSS global

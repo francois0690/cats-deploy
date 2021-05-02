@@ -58,13 +58,18 @@
                     <p hidden class="link-to-share"><%= "#{request.base_url}/#card-anchor#{c.id}" %> </p>
 
 
-                    <%= link_to nil, method: :get, remote: true, class: "share" do %>
+                    <%= link_to nil, method: :get, remote: true, class: "share",  title: "Partager" do %>
                       <i class="icones fas fa-share-alt"></i>
                     <% end %>
                 <% else %>
                     <!-- Whatsapp share -->
                     <% url_encoded = url_encode("#{request.base_url}/#card-anchor#{c.id}") %>
-                    <%= link_to "", "https://api.whatsapp.com/send?text=#{url_encoded}", class: "icones fab fa-whatsapp" %>
+                    <%= link_to "", "https://api.whatsapp.com/send?text=#{url_encoded}", class: "icones fab fa-whatsapp", title: "Partager sur Whatsapp" %>
+
+<!-- <p  class="prout" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">cc</p> -->
+
+
+
 
 
                     <!-- Instagram share -->
@@ -72,17 +77,19 @@
 
 
                     <!-- facebook share -->
-                    <%= link_to "", "https://www.facebook.com/sharer/sharer.php?u=#{url_encoded}", class: "icones fab fa-facebook" %>
+                    <%= link_to "", "https://www.facebook.com/sharer/sharer.php?u=#{url_encoded}", class: "icones fab fa-facebook", title: "Partager sur Facebook" %>
                     <!-- <a href=""><i class="fab fa-facebook"></i></a> -->
 
                     <!-- twitter share -->
                     <!-- <a href=""><i class="fab fa-twitter"></i></a> -->
-                    <%= link_to "", "https://twitter.com/intent/tweet?text=#{url_encoded}", class: "icones fab fa-twitter" %>
+                    <%= link_to "", "https://twitter.com/intent/tweet?text=#{url_encoded}", class: "icones fab fa-twitter",  title: "Partager sur Twitter" %>
 
 
                     <!-- email share -->
-                    <%= link_to "", "mailto:?subject=J'ai trouvé ceci, cela pourrait vous intéresser ! &amp;body=Regardez ce lien : #{request.base_url}/#card-anchor#{c.id}", class: "icones far fa-envelope" %>
+                    <!-- <%# link_to "", "mailto:?subject=J'ai trouvé cet animal à adopter, cela pourrait vous intéresser ! &amp;body=Regardez ce lien : #{request.base_url}/#card-anchor#{c.id}", class: "icones far fa-envelope", title: "Partager par email" %> -->
 
+
+                    <%= mail_to nil, nil, subject: "J'ai trouvé cet animal à adopter, cela pourrait vous intéresser !", body: "Regardez ce lien : #{request.base_url}/#card-anchor#{c.id}", class: "icones far fa-envelope", title: "Partager par email" %>
                  <% end %>
               </div>
 
@@ -117,8 +124,8 @@
                 <% end %>
               <% else %>
 
-                <%= link_to new_user_session_path, class: "icones-fav-not-signed" do %>
-                  <i class="far fa-heart"></i>
+                <%= link_to new_user_session_path, class: "icones-fav-not-signed"  do %>
+                  <i class="far fa-heart",  title="Ajouter aux favoris"></i>
                 <% end %>
 
               <% end %>
@@ -244,7 +251,7 @@
 
                       <tr>
                         <td class="card-product-td-s"><i class="fas fa-address-card"></i> &nbsp; Contact</td>
-                        <td class="card-product-td"><%= mail_to c.contact %></td>
+                        <td class="card-product-td" title="Contacter par email"><%= mail_to c.contact, c.contact, subject: "Demande d'information sur #{c.name}", title: "Contacter par email" %></td>
                       </tr>
 
                       <tr>
