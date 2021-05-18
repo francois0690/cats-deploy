@@ -67,7 +67,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'data-confirm-modal'
 gem 'carrierwave'
-gem 'social-share-button'
+# gem 'social-share-button'
 # gem "browser" #, require: "browser/browser"
 # gem 'pg_search', '~> 2.3', '>= 2.3.5'
 
